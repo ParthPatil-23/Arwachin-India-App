@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/Teacher">
+    android:background="@drawable/teacher">
 
     <View
         android:id="@+id/view"
@@ -72,6 +72,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Teacher_Password"
         app:layout_constraintVertical_bias="0.145" />
+
+    <Button
+        android:id="@+id/Go_back"
+        android:layout_width="70dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="24dp"
+        android:drawableLeft="@drawable/ic_baseline_keyboard_backspace_24"
+        android:drawablePadding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/Teacher_ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.141" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/Student">
+    android:background="@drawable/student">
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00000000"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-16dp" />
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <EditText
         android:id="@+id/Student_ID"
@@ -71,6 +71,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Student_Password"
         app:layout_constraintVertical_bias="0.145" />
+
+    <Button
+        android:id="@+id/Go_back"
+        android:layout_width="70dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="24dp"
+        android:drawableLeft="@drawable/ic_baseline_keyboard_backspace_24"
+        android:drawablePadding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/Student_ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.141" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
