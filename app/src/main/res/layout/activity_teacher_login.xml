@@ -78,6 +78,7 @@
         android:layout_width="70dp"
         android:layout_height="78dp"
         android:layout_marginStart="24dp"
+        android:background="@drawable/input_bg2"
         android:drawableLeft="@drawable/ic_baseline_keyboard_backspace_24"
         android:drawablePadding="15dp"
         app:layout_constraintBottom_toTopOf="@+id/Teacher_ID"
