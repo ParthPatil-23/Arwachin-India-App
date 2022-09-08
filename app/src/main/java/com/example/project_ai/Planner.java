@@ -9,27 +9,27 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Student_Nav extends AppCompatActivity {
+public class Planner extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_nav);
+        setContentView(R.layout.activity_planner);
 
         // Initialzing Bottom Nav Bar
         BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNav);
 
         // setting home selected
-        bottomNavigationView.setSelectedItemId(R.id.Home);
+        bottomNavigationView.setSelectedItemId(R.id.Planner);
 
         // Performing Item Selected listerner
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
-                    case R.id.Planner:
+                    case R.id.Profile:
                         startActivity(new Intent(getApplicationContext()
-                        ,Planner.class));
+                                ,Profile.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -45,15 +45,14 @@ public class Student_Nav extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.Profile:
+                    case R.id.Home:
                         startActivity(new Intent(getApplicationContext()
-                                ,Profile.class));
+                                , Student_Nav.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
                 return false;
             }
         });
-
     }
 }

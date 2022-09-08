@@ -90,6 +90,7 @@ public class Student_Login extends AppCompatActivity {
                     Student_Password.requestFocus();
 
                 }else{
+
                     databaseReference.child("Student").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -116,6 +117,10 @@ public class Student_Login extends AppCompatActivity {
                                 Student_ID.setError("Incorrect Student I.D");
                                 Student_ID.requestFocus();
                                 Toast.makeText(Student_Login.this, "Student I.D Doesn't Exist", Toast.LENGTH_SHORT).show();
+
+                                progressDialog.setTitle("Log In");
+                                progressDialog.setMessage("Wait while Log In");
+                                progressDialog.setCanceledOnTouchOutside(true);
                             }
 
                         }

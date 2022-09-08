@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Home"
+        android:icon="@drawable/home_notcolored"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/Planner"
+        android:icon="@drawable/planner_no"
+        android:title="Planner" />
+
+    <item
+        android:id="@+id/Arwachin"
+        android:icon="@drawable/arwachin"
+        android:title="ArwachinIndia" />
+
+    <item
+        android:id="@+id/DashBoard"
+        android:icon="@drawable/book_no"
+        android:title="DashBoard" />
+
+    <item
+        android:id="@+id/Profile"
+        android:icon="@drawable/resume_no"
+        android:title="Profile" />
+</menu>
