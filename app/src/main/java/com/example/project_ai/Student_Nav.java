@@ -54,6 +54,6 @@ public class Student_Nav extends AppCompatActivity {
                 return false;
             }
         });
-
+        bottomNavigationView.setItemIconTintList(null);
     }
 }

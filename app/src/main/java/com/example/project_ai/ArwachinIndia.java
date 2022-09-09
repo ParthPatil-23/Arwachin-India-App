@@ -56,6 +56,7 @@ public class ArwachinIndia extends AppCompatActivity {
                 return false;
             }
         });
+        bottomNavigationView.setItemIconTintList(null);
 
     }
 }

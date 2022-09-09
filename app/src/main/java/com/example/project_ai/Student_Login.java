@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Student_Login extends AppCompatActivity {
+
+    // Trying to solve the problem for opening student_nav after opening and already signed in
+    public static String PREFS_NAME = "MyPrefsFile";
 
     Button Go_back,Student_login;
     EditText Student_ID, Student_Password;
@@ -103,10 +107,24 @@ public class Student_Login extends AppCompatActivity {
                                 final String getPassword = snapshot.child(Std_ID).child("Password").getValue(String.class);
 
                                 if(getPassword.equals(Std_pass)){
+
+
                                     Toast.makeText(Student_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
 
                                     // Opening Student Navigation
                                     startActivity(new Intent(Student_Login.this,Student_Nav.class));
+
+                                    // Trying to not show login again after once Loged In
+                                    SharedPreferences sharedPreferences = getSharedPreferences(Student_Login.PREFS_NAME,0);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                    editor.putBoolean("hasLoggedIn",true);
+                                    editor.commit();
+
+                                    startActivity(new Intent(Student_Login.this,Student_Nav.class));
+                                    finish();
+
+
                                 }
                                 else{
                                     Student_Password.setError("Incorrect Password");
@@ -118,9 +136,7 @@ public class Student_Login extends AppCompatActivity {
                                 Student_ID.requestFocus();
                                 Toast.makeText(Student_Login.this, "Student I.D Doesn't Exist", Toast.LENGTH_SHORT).show();
 
-                                progressDialog.setTitle("Log In");
-                                progressDialog.setMessage("Wait while Log In");
-                                progressDialog.setCanceledOnTouchOutside(true);
+
                             }
 
                         }

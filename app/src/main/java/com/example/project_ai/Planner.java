@@ -54,5 +54,6 @@ public class Planner extends AppCompatActivity {
                 return false;
             }
         });
+        bottomNavigationView.setItemIconTintList(null);
     }
 }

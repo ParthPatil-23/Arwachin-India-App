@@ -56,5 +56,6 @@ public class DashBoard extends AppCompatActivity {
             }
         });
 
+        bottomNavigationView.setItemIconTintList(null);
     }
 }

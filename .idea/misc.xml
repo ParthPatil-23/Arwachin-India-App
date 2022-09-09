@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/arwachin_selector.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/dashboard_selector.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/home_selector.xml" value="0.2375" />
         <entry key="app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.142" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2375" />
         <entry key="app/src/main/res/drawable/input_bg.xml" value="0.153" />
         <entry key="app/src/main/res/drawable/input_bg2.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/planner_selector.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/profile_selector.xml" value="0.2375" />
         <entry key="app/src/main/res/layout/activity_arwachin_india.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_dash_board.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_home2.xml" value="0.25495495495495496" />
+        <entry key="app/src/main/res/layout/activity_logo.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/activity_planner.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25495495495495496" />
