@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/Home"
-        android:icon="@drawable/home_notcolored"
+        android:icon="@drawable/home_no"
         android:title="Home" />
 
     <item
         android:id="@+id/Planner"
-        android:icon="@drawable/planner_no"
+        android:icon="@drawable/calender"
         android:title="Planner" />
 
     <item
@@ -18,7 +18,7 @@
 
     <item
         android:id="@+id/DashBoard"
-        android:icon="@drawable/book_no"
+        android:icon="@drawable/book"
         android:title="DashBoard" />
 
     <item

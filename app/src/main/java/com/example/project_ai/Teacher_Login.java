@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,9 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class Teacher_Login extends AppCompatActivity {
+
+    // Trying to solve the problem for opening teacher_nav after opening and already signed in
+    public static String PREFS_NAME = "MyPrefsFile";
 
     Button Go_back,Teacher_login;
     EditText Teacher_ID, Teacher_Password;
@@ -93,7 +97,7 @@ public class Teacher_Login extends AppCompatActivity {
                     Teacher_Password.requestFocus();
 
                 }else{
-                    databaseReference.child("Teacher").addListenerForSingleValueEvent(new ValueEventListener() {
+                    databaseReference.child("Teachers").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -109,6 +113,16 @@ public class Teacher_Login extends AppCompatActivity {
 
                                     // Opening Teacher Navigation
                                     startActivity(new Intent(Teacher_Login.this,Teacher_Nav.class));
+
+                                    // Trying to not show login again after once Loged In
+                                    SharedPreferences sharedPreferences2 = getSharedPreferences(Teacher_Login.PREFS_NAME,0);
+                                    SharedPreferences.Editor editor = sharedPreferences2.edit();
+
+                                    editor.putBoolean("hasLoggedIn",true);
+                                    editor.commit();
+
+                                    startActivity(new Intent(Teacher_Login.this,Teacher_Nav.class));
+                                    finish();
                                 }
                                 else{
                                     Teacher_Password.setError("Incorrect Password");

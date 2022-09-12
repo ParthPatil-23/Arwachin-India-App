@@ -115,8 +115,8 @@ public class Student_Login extends AppCompatActivity {
                                     startActivity(new Intent(Student_Login.this,Student_Nav.class));
 
                                     // Trying to not show login again after once Loged In
-                                    SharedPreferences sharedPreferences = getSharedPreferences(Student_Login.PREFS_NAME,0);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME,0);
+                                    SharedPreferences.Editor editor = sharedPreferences1.edit();
 
                                     editor.putBoolean("hasLoggedIn",true);
                                     editor.commit();

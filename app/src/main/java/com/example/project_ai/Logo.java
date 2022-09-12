@@ -18,11 +18,21 @@ public class Logo extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                SharedPreferences sharedPreferences = getSharedPreferences(Student_Login.PREFS_NAME,0);
-                boolean hasLoggedIn = sharedPreferences.getBoolean("hasLoggedIn",false);
 
-                if(hasLoggedIn){
+                // Student
+                SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME,0);
+                boolean hasLoggedIn1 = sharedPreferences1.getBoolean("hasLoggedIn",false);
+
+                // Teacher
+                SharedPreferences sharedPreferences2 = getSharedPreferences(Teacher_Login.PREFS_NAME,0);
+                boolean hasLoggedIn2 = sharedPreferences2.getBoolean("hasLoggedIn",false);
+
+                if(hasLoggedIn1){
                     Intent intent = new Intent(Logo.this,Student_Nav.class);
+                    startActivity(intent);
+                    finish();
+                }if(hasLoggedIn2){
+                    Intent intent = new Intent(Logo.this,Teacher_Nav.class);
                     startActivity(intent);
                     finish();
                 }else{
