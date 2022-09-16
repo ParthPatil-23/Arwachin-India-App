@@ -24,9 +24,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Teacher_Login extends AppCompatActivity {
 
-    // Trying to solve the problem for opening teacher_nav after opening and already signed in
+    // If already Logged In don't have to log again
     public static String PREFS_NAME = "MyPrefsFile";
 
+    // Importing Button, EditText, Progress Dialog
     Button Go_back,Teacher_login;
     EditText Teacher_ID, Teacher_Password;
     ProgressDialog progressDialog;
@@ -60,9 +61,6 @@ public class Teacher_Login extends AppCompatActivity {
 
 
 
-
-
-
         Go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +70,7 @@ public class Teacher_Login extends AppCompatActivity {
         });
 
 
+        // Adding function to the Student Login Button
         Teacher_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,11 +78,13 @@ public class Teacher_Login extends AppCompatActivity {
 
             }
 
+            // Making a function to Perform Login
             private void PerformLogin() {
                 String Teach_ID = Teacher_ID.getText().toString();
                 String Teach_pass = Teacher_Password.getText().toString();
 
 
+                // Checking if the Edit Text is empty or incorrect
                 if(Teach_ID.isEmpty()){
                     Teacher_ID.setError("Incorrect Teacher I.D");
                     Teacher_ID.requestFocus();
@@ -118,7 +119,7 @@ public class Teacher_Login extends AppCompatActivity {
                                     SharedPreferences sharedPreferences2 = getSharedPreferences(Teacher_Login.PREFS_NAME,0);
                                     SharedPreferences.Editor editor = sharedPreferences2.edit();
 
-                                    editor.putBoolean("hasLoggedIn",true);
+                                    editor.putBoolean("hasLoggedIn2",true);
                                     editor.commit();
 
                                     startActivity(new Intent(Teacher_Login.this,Teacher_Nav.class));

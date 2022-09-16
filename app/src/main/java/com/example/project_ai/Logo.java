@@ -19,22 +19,25 @@ public class Logo extends AppCompatActivity {
             @Override
             public void run() {
 
-                // Student
+                // Checking if the student have already login or not
                 SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME,0);
-                boolean hasLoggedIn1 = sharedPreferences1.getBoolean("hasLoggedIn",false);
+                boolean hasLoggedIn1 = sharedPreferences1.getBoolean("hasLoggedIn1",false);
 
-                // Teacher
+                // Checking if the Teacher have already login or not
                 SharedPreferences sharedPreferences2 = getSharedPreferences(Teacher_Login.PREFS_NAME,0);
-                boolean hasLoggedIn2 = sharedPreferences2.getBoolean("hasLoggedIn",false);
+                boolean hasLoggedIn2 = sharedPreferences2.getBoolean("hasLoggedIn2",false);
+
 
                 if(hasLoggedIn1){
                     Intent intent = new Intent(Logo.this,Student_Nav.class);
                     startActivity(intent);
                     finish();
-                }if(hasLoggedIn2){
+
+                }else if(hasLoggedIn2){
                     Intent intent = new Intent(Logo.this,Teacher_Nav.class);
                     startActivity(intent);
                     finish();
+
                 }else{
                     Intent intent = new Intent(Logo.this, MainActivity.class);
                     startActivity(intent);

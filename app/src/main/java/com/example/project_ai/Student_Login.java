@@ -22,17 +22,19 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Student_Login extends AppCompatActivity {
 
-    // Trying to solve the problem for opening student_nav after opening and already signed in
+    // If already Logged In don't have to log again
     public static String PREFS_NAME = "MyPrefsFile";
 
+    // Importing Button, EditText, Progress Dialog
     Button Go_back,Student_login;
     EditText Student_ID, Student_Password;
     ProgressDialog progressDialog;
 
+    // Importing private firebase variables
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
-    // Firebase mAuth and mUSer
+    // Firebase mAuth and mUSer for Login Auth
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
@@ -42,11 +44,12 @@ public class Student_Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
-        // Initialize Firebase Auth
+
+        // Initializing Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
         
-        // initializing Button
+        // Initializing Button
         Go_back = (Button)findViewById(R.id.Go_back);
         Student_login = (Button)findViewById(R.id.Student_login);
 
@@ -69,18 +72,19 @@ public class Student_Login extends AppCompatActivity {
         });
 
 
+        // Adding function to the Student Login Button
         Student_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PerformLogin();
 
             }
-
+            // Making a function to Perform Login
             private void PerformLogin() {
                 String Std_ID = Student_ID.getText().toString();
                 String Std_pass = Student_Password.getText().toString();
 
-
+                // Checking if the Edit Text is empty or incorrect
                 if(Std_ID.isEmpty()){
                     Student_ID.setError("Incorrect Student I.D");
                     Student_ID.requestFocus();
@@ -118,7 +122,7 @@ public class Student_Login extends AppCompatActivity {
                                     SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME,0);
                                     SharedPreferences.Editor editor = sharedPreferences1.edit();
 
-                                    editor.putBoolean("hasLoggedIn",true);
+                                    editor.putBoolean("hasLoggedIn1",true);
                                     editor.commit();
 
                                     startActivity(new Intent(Student_Login.this,Student_Nav.class));
