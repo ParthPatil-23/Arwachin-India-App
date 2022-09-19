@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Profile">
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNav"
         android:layout_width="match_parent"
@@ -20,15 +21,399 @@
         app:menu="@menu/bottom_nav_menu"
         />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Profile"
-        app:layout_constraintBottom_toTopOf="@+id/BottomNav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-284dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#fece2f"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher_background" />
+
+            <TextView
+                android:id="@+id/fullname_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:fontFamily="@font/machinegunk"
+                android:includeFontPadding="false"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/username_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullname_field"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:includeFontPadding="false"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-100dp"
+            android:padding="20dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#fece2f"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_launcher_background" />
+
+                    <TextView
+                        android:id="@+id/payment_label1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="Class Rank"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/payment_desc1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/payment_label1"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/machinegunk"
+                        android:hint="4th"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="#fece2f"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_launcher_background" />
+
+                    <TextView
+                        android:id="@+id/payment_label2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:hint="Persentage"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/payment_desc2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/payment_label2"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/machinegunk"
+                        android:hint="89%"
+                        android:includeFontPadding="false"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/full_name_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Full Name"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/full_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false"
+                        android:textSize="20dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dob_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Date Of Birth"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/roll_no_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Roll Number"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/roll_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/class_tech_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Class Teacher"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/class_tech"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/father_name_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Father's Name"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/father_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mother_name_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Mother's Name"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mother_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/class_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Class"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/class1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mess_fees_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Mess Fees"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mess_fees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/bus_fees_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Bus Fees"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bus_fees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tot_sch_fees_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Total School Fees"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tot_sch_fees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tot_sch_fees_paid_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Total Fees Paid"
+                    android:textStyle="bold">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tot_sch_fees_paid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffff"
+                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tot_sch_fees_left_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:hint="Total Fees Left"
+                        android:textStyle="bold">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/tot_sch_fees_left"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#ffffff"
+                            android:drawableLeft="@drawable/ic_baseline_person_24"
+                            android:drawablePadding="10dp"
+                            android:editable="false" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
