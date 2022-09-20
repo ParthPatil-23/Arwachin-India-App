@@ -22,6 +22,8 @@ public class Logo extends AppCompatActivity {
                 // Checking if the student have already login or not
                 SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME,0);
                 boolean hasLoggedIn1 = sharedPreferences1.getBoolean("hasLoggedIn1",false);
+                String Std_ID = sharedPreferences1.getString("stu_id","");
+
 
                 // Checking if the Teacher have already login or not
                 SharedPreferences sharedPreferences2 = getSharedPreferences(Teacher_Login.PREFS_NAME,0);
@@ -34,7 +36,7 @@ public class Logo extends AppCompatActivity {
                     finish();
 
                 }else if(hasLoggedIn2){
-                    Intent intent = new Intent(Logo.this,Teacher_Nav.class);
+                    Intent intent = new Intent(getApplicationContext(),Teacher_Nav.class);
                     startActivity(intent);
                     finish();
 

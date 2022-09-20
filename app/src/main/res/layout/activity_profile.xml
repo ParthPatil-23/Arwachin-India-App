@@ -64,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/fullname_field"
                 android:layout_marginLeft="10dp"
+                android:text=""
                 android:layout_toRightOf="@+id/profile_image"
                 android:includeFontPadding="false"
                 android:textSize="14sp" />
@@ -193,8 +194,10 @@
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:drawablePadding="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:editable="false"
-                        android:textSize="20dp" />
+                        android:textSize="25dp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -212,7 +215,10 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
                         android:drawablePadding="10dp"
+                        android:textSize="25dp"
                         android:editable="false" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -231,6 +237,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -249,6 +258,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
@@ -268,6 +280,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -286,6 +301,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
@@ -305,6 +323,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
@@ -324,6 +345,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
@@ -343,6 +367,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
@@ -362,6 +389,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
@@ -381,6 +411,9 @@
                         android:layout_height="wrap_content"
                         android:background="#ffffff"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
@@ -398,6 +431,29 @@
                             android:layout_height="wrap_content"
                             android:background="#ffffff"
                             android:drawableLeft="@drawable/ic_baseline_person_24"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textSize="25dp"
+                            android:drawablePadding="10dp"
+                            android:editable="false" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/spaefiller2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/spacefiller"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:textSize="25dp"
                             android:drawablePadding="10dp"
                             android:editable="false" />
 

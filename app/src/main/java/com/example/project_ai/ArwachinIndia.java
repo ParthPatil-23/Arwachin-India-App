@@ -59,4 +59,16 @@ public class ArwachinIndia extends AppCompatActivity {
         bottomNavigationView.setItemIconTintList(null);
 
     }
+
+
+    // Setting so that the on double back press app quits.
+    int counter = 0;
+    @Override
+    public void onBackPressed() {
+
+        counter++;
+        if (counter == 2) {
+            finishAffinity();
+        }
+    }
 }

@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,6 +58,8 @@ public class Student_Login extends AppCompatActivity {
         // Initializing Input field Variables
         Student_ID = findViewById(R.id.Student_ID);
         Student_Password = findViewById(R.id.Student_Password);
+        Intent intent = (new Intent(Student_Login.this,Profile.class));
+        intent.putExtra("s", String.valueOf(Student_ID));
 
         // Initializing Database
         databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
@@ -83,6 +87,7 @@ public class Student_Login extends AppCompatActivity {
             private void PerformLogin() {
                 String Std_ID = Student_ID.getText().toString();
                 String Std_pass = Student_Password.getText().toString();
+
 
                 // Checking if the Edit Text is empty or incorrect
                 if(Std_ID.isEmpty()){
@@ -113,20 +118,33 @@ public class Student_Login extends AppCompatActivity {
                                 if(getPassword.equals(Std_pass)){
 
 
-                                    Toast.makeText(Student_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
 
-                                    // Opening Student Navigation
-                                    startActivity(new Intent(Student_Login.this,Student_Nav.class));
+
+
+
 
                                     // Trying to not show login again after once Loged In
-                                    SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME,0);
+                                    SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, Context.MODE_PRIVATE);
                                     SharedPreferences.Editor editor = sharedPreferences1.edit();
+
+                                    editor.putString("stud_id",Student_ID.getText().toString() );
+                                    editor.commit();
+                                    Toast.makeText(Student_Login.this, "ID Password Saved!!!", Toast.LENGTH_SHORT).show();
 
                                     editor.putBoolean("hasLoggedIn1",true);
                                     editor.commit();
+                                    editor.apply();
 
-                                    startActivity(new Intent(Student_Login.this,Student_Nav.class));
+                                    // Intent to profile activity
+                                    Intent intent1 = (new Intent(Student_Login.this,Profile.class));
+                                    startActivity(intent1);
                                     finish();
+
+//                                    Toast.makeText(Student_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
+
+
+
+
 
 
                                 }

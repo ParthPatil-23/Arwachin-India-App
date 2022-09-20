@@ -22,6 +22,10 @@ public class Student_Nav extends AppCompatActivity {
         // setting home selected
         bottomNavigationView.setSelectedItemId(R.id.Home);
 
+
+
+
+
         // Performing Item Selected listerner
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -56,4 +60,18 @@ public class Student_Nav extends AppCompatActivity {
         });
         bottomNavigationView.setItemIconTintList(null);
     }
+
+
+    // Setting so that the on double back press app quits.
+    int counter = 0;
+    @Override
+    public void onBackPressed() {
+
+        counter++;
+        if (counter == 2) {
+            finishAffinity();
+        }
+    }
+
+
 }
