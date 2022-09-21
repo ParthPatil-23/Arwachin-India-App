@@ -17,8 +17,9 @@
         <entry key="app/src/main/res/layout/activity_home2.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_logo.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24166666666666667" />
+        <entry key="app/src/main/res/layout/activity_no_internet.xml" value="0.2358974358974359" />
         <entry key="app/src/main/res/layout/activity_planner.xml" value="0.25495495495495496" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_student_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_student_nav.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_teacher_login.xml" value="0.24166666666666667" />

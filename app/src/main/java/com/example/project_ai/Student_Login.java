@@ -8,12 +8,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -40,12 +42,20 @@ public class Student_Login extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
+    // Lottie animation
+    LottieAnimationView success,confetti1,confetti2,confetti3;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
+
+        // Initializing Animation
+        success = findViewById(R.id.success);
+        confetti1 = findViewById(R.id.confetti1);
+        confetti2 = findViewById(R.id.confetti2);
+        confetti3 = findViewById(R.id.confetti3);
 
         // Initializing Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -58,7 +68,7 @@ public class Student_Login extends AppCompatActivity {
         // Initializing Input field Variables
         Student_ID = findViewById(R.id.Student_ID);
         Student_Password = findViewById(R.id.Student_Password);
-        Intent intent = (new Intent(Student_Login.this,Profile.class));
+        Intent intent = (new Intent(Student_Login.this,Student_Nav.class));
         intent.putExtra("s", String.valueOf(Student_ID));
 
         // Initializing Database
@@ -116,31 +126,58 @@ public class Student_Login extends AppCompatActivity {
                                 final String getPassword = snapshot.child(Std_ID).child("Password").getValue(String.class);
 
                                 if(getPassword.equals(Std_pass)){
+                                    success.playAnimation();
+                                    confetti1.playAnimation();
+                                    confetti2.playAnimation();
+                                    confetti3.playAnimation();
+
+
+                                    // Setting the delay to play animation
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+
+
+                                            // Trying to not show login again after once Loged In
+                                            SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, Context.MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = sharedPreferences1.edit();
+
+                                            editor.putString("stud_id",Student_ID.getText().toString() );
+                                            editor.commit();
+//                                            Toast.makeText(Student_Login.this, "ID Password Saved!!!", Toast.LENGTH_SHORT).show();
+
+                                            editor.putBoolean("hasLoggedIn1",true);
+                                            editor.commit();
+                                            editor.apply();
+
+                                            // Intent to profile activity
+                                            Intent intent1 = (new Intent(Student_Login.this,Student_Nav.class));
+                                            startActivity(intent1);
+                                            finish();
+                                            Toast.makeText(Student_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
+
+
+                                            new Handler().postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    success.setVisibility(View.INVISIBLE);
+                                                    confetti1.setVisibility(View.INVISIBLE);
+                                                    confetti2.setVisibility(View.INVISIBLE);
+                                                    confetti3.setVisibility(View.INVISIBLE);
+                                                }
+                                            }, 3500);
 
 
 
 
 
 
+                                        }
+                                    }, 5000);
 
-                                    // Trying to not show login again after once Loged In
-                                    SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences1.edit();
 
-                                    editor.putString("stud_id",Student_ID.getText().toString() );
-                                    editor.commit();
-                                    Toast.makeText(Student_Login.this, "ID Password Saved!!!", Toast.LENGTH_SHORT).show();
 
-                                    editor.putBoolean("hasLoggedIn1",true);
-                                    editor.commit();
-                                    editor.apply();
 
-                                    // Intent to profile activity
-                                    Intent intent1 = (new Intent(Student_Login.this,Profile.class));
-                                    startActivity(intent1);
-                                    finish();
-
-//                                    Toast.makeText(Student_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
 
 
 

@@ -88,5 +88,57 @@
         app:layout_constraintTop_toTopOf="@+id/view"
         app:layout_constraintVertical_bias="0.141" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/success"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.598"
+        app:lottie_autoPlay="false"
+        app:lottie_rawRes="@raw/success" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confetti1"
+        android:layout_width="232dp"
+        android:layout_height="182dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.609"
+        app:lottie_autoPlay="false"
+        app:lottie_rawRes="@raw/confetti" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confetti2"
+        android:layout_width="232dp"
+        android:layout_height="182dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.377"
+        app:lottie_autoPlay="false"
+        app:lottie_rawRes="@raw/confetti" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/confetti3"
+        android:layout_width="232dp"
+        android:layout_height="182dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.835"
+        app:lottie_autoPlay="false"
+        app:lottie_rawRes="@raw/confetti" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
