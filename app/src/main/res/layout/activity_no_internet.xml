@@ -39,17 +39,17 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="69dp"
+        android:layout_height="31dp"
         android:fontFamily="@font/machinegunk"
-        android:text="Error No Internet"
-        android:textSize="20dp"
+        android:text="Error"
         android:textColor="@color/white"
+        android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/server_error"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        app:layout_constraintVertical_bias="0.65" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

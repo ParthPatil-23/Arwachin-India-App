@@ -54,9 +54,9 @@
                 android:layout_toRightOf="@+id/profile_image"
                 android:fontFamily="@font/machinegunk"
                 android:includeFontPadding="false"
-                android:text=""
+                android:text="Parth Patil"
                 android:textColor="#000"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/username_field"

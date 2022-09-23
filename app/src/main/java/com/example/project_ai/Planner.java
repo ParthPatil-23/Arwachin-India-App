@@ -21,10 +21,10 @@ public class Planner extends AppCompatActivity {
 
 
         // Checking if the device is connected to internet
-        if (!isConnected(Planner.this)){
-            Intent intent3 = new Intent(Planner.this,No_Internet.class);
+        if (!isConnected(Planner.this)) {
+            Intent intent3 = new Intent(Planner.this, No_Internet.class);
             startActivity(intent3);
-        }else {
+        } else {
             // Initialzing Bottom Nav Bar
             BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNav);
 
@@ -35,29 +35,29 @@ public class Planner extends AppCompatActivity {
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    switch (menuItem.getItemId()){
+                    switch (menuItem.getItemId()) {
                         case R.id.Profile:
                             startActivity(new Intent(getApplicationContext()
-                                    ,Profile.class));
-                            overridePendingTransition(0,0);
+                                    , Profile.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.Arwachin:
                             startActivity(new Intent(getApplicationContext()
-                                    ,ArwachinIndia.class));
-                            overridePendingTransition(0,0);
+                                    , ArwachinIndia.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.DashBoard:
                             startActivity(new Intent(getApplicationContext()
-                                    ,DashBoard.class));
-                            overridePendingTransition(0,0);
+                                    , DashBoard.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.Home:
                             startActivity(new Intent(getApplicationContext()
                                     , Student_Nav.class));
-                            overridePendingTransition(0,0);
+                            overridePendingTransition(0, 0);
                             return true;
                     }
                     return false;
@@ -65,22 +65,19 @@ public class Planner extends AppCompatActivity {
             });
             bottomNavigationView.setItemIconTintList(null);
         }
-        }
-
-
-
-
+    }
 
 
     // Setting so that the on double back press app quits.
     int counter = 0;
+
     @Override
     public void onBackPressed() {
 
-         counter++;
-         if (counter == 2) {
-             finishAffinity();
-         }
+        counter++;
+        if (counter == 2) {
+            finishAffinity();
+        }
     }
 
 
@@ -92,9 +89,9 @@ public class Planner extends AppCompatActivity {
         NetworkInfo wificonn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileconn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if((wificonn != null && wificonn.isConnected()) || (mobileconn != null && mobileconn.isConnected())){
+        if ((wificonn != null && wificonn.isConnected()) || (mobileconn != null && mobileconn.isConnected())) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

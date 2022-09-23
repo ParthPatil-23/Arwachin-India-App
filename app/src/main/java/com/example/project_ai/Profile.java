@@ -27,8 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 public class Profile extends AppCompatActivity {
 
     // Importing Text
-    EditText full_name,dob,roll_no,father_name,mother_name,class1,class_tech,mess_fees,bus_fees,tot_sch_fees,tot_sch_fees_paid,tot_sch_fees_left,Student_ID;
-    TextView fullname_field,username_field;
+    EditText full_name, dob, roll_no, father_name, mother_name, class1, class_tech, mess_fees, bus_fees, tot_sch_fees, tot_sch_fees_paid, tot_sch_fees_left, Student_ID;
+    TextView fullname_field, username_field;
 
     // Importing private firebase variables
     private FirebaseDatabase database;
@@ -41,8 +41,6 @@ public class Profile extends AppCompatActivity {
     //Saving Variable Std_ID
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String STUD_ID = "Stud_ID";
-
-
 
 
     @Override
@@ -68,7 +66,6 @@ public class Profile extends AppCompatActivity {
         tot_sch_fees_left = findViewById(R.id.tot_sch_fees_left);
 
 
-
         // Initialzing Bottom Nav Bar
         BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNav);
 
@@ -84,13 +81,13 @@ public class Profile extends AppCompatActivity {
 
 
         // Checking if the device is connected to internet
-        if (!isConnected(Profile.this)){
-            Intent intent3 = new Intent(Profile.this,No_Internet.class);
+        if (!isConnected(Profile.this)) {
+            Intent intent3 = new Intent(Profile.this, No_Internet.class);
             startActivity(intent3);
-        }else {
+        } else {
             // Checking if the student have already login or not
-            SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME,0);
-            String Std_ID = sharedPreferences1.getString("stud_id","");
+            SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, 0);
+            String Std_ID = sharedPreferences1.getString("stud_id", "");
 
 
             databaseReference.child("Student").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -112,9 +109,8 @@ public class Profile extends AppCompatActivity {
                     final String School_Fees_Paid = snapshot.child(Std_ID).child("Paid").getValue(String.class);
 
 
-
                     // Putting Data
-                    fullname_field.setText(Name+" kolder");
+                    fullname_field.setText(Name + " kolder");
                     username_field.setText(Std_ID);
                     full_name.setText(Name);
                     dob.setText(DOB);
@@ -130,7 +126,6 @@ public class Profile extends AppCompatActivity {
                     tot_sch_fees_paid.setText(School_Fees_Paid);
 
 
-
                 }
 
                 @Override
@@ -140,65 +135,51 @@ public class Profile extends AppCompatActivity {
             });
 
 
-
-
-
-
-
-
-
-
-
-
             // Performing Item Selected listerner
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    switch (menuItem.getItemId()){
+                    switch (menuItem.getItemId()) {
                         case R.id.Planner:
                             startActivity(new Intent(getApplicationContext()
-                                    ,Planner.class));
-                            overridePendingTransition(0,0);
+                                    , Planner.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.Arwachin:
                             startActivity(new Intent(getApplicationContext()
-                                    ,ArwachinIndia.class));
-                            overridePendingTransition(0,0);
+                                    , ArwachinIndia.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.DashBoard:
                             startActivity(new Intent(getApplicationContext()
-                                    ,DashBoard.class));
-                            overridePendingTransition(0,0);
+                                    , DashBoard.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.Home:
                             startActivity(new Intent(getApplicationContext()
                                     , Student_Nav.class));
-                            overridePendingTransition(0,0);
+                            overridePendingTransition(0, 0);
                             return true;
                     }
                     return false;
                 }
 
 
-
-
             });
             bottomNavigationView.setItemIconTintList(null);
 
 
-
-
         }
-        }
-
+    }
 
 
     // Setting so that the on double back press app quits.
     int counter = 0;
+
     @Override
     public void onBackPressed() {
 
@@ -217,9 +198,9 @@ public class Profile extends AppCompatActivity {
         NetworkInfo wificonn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileconn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if((wificonn != null && wificonn.isConnected()) || (mobileconn != null && mobileconn.isConnected())){
+        if ((wificonn != null && wificonn.isConnected()) || (mobileconn != null && mobileconn.isConnected())) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

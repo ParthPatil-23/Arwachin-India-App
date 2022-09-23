@@ -27,39 +27,39 @@ public class Student_Nav extends AppCompatActivity {
 
 
         // Checking if the device is connected to internet
-        if (!isConnected(Student_Nav.this)){
-            Intent intent3 = new Intent(Student_Nav.this,No_Internet.class);
+        if (!isConnected(Student_Nav.this)) {
+            Intent intent3 = new Intent(Student_Nav.this, No_Internet.class);
             startActivity(intent3);
-        }else {
+        } else {
 
 
             // Performing Item Selected listerner
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    switch (menuItem.getItemId()){
+                    switch (menuItem.getItemId()) {
                         case R.id.Planner:
                             startActivity(new Intent(getApplicationContext()
-                                    ,Planner.class));
-                            overridePendingTransition(0,0);
+                                    , Planner.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.Arwachin:
                             startActivity(new Intent(getApplicationContext()
-                                    ,ArwachinIndia.class));
-                            overridePendingTransition(0,0);
+                                    , ArwachinIndia.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.DashBoard:
                             startActivity(new Intent(getApplicationContext()
-                                    ,DashBoard.class));
-                            overridePendingTransition(0,0);
+                                    , DashBoard.class));
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.Profile:
                             startActivity(new Intent(getApplicationContext()
-                                    ,Profile.class));
-                            overridePendingTransition(0,0);
+                                    , Profile.class));
+                            overridePendingTransition(0, 0);
                             return true;
                     }
                     return false;
@@ -71,20 +71,9 @@ public class Student_Nav extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     // Setting so that the on double back press app quits.
     int counter = 0;
+
     @Override
     public void onBackPressed() {
 
@@ -95,8 +84,6 @@ public class Student_Nav extends AppCompatActivity {
     }
 
 
-
-
     // Function to check if device is connected to internet
     private boolean isConnected(Student_Nav student_nav) {
 
@@ -105,9 +92,9 @@ public class Student_Nav extends AppCompatActivity {
         NetworkInfo wificonn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileconn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if((wificonn != null && wificonn.isConnected()) || (mobileconn != null && mobileconn.isConnected())){
+        if ((wificonn != null && wificonn.isConnected()) || (mobileconn != null && mobileconn.isConnected())) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }

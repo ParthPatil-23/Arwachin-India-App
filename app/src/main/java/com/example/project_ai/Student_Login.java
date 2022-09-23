@@ -30,7 +30,7 @@ public class Student_Login extends AppCompatActivity {
     public static String PREFS_NAME = "MyPrefsFile";
 
     // Importing Button, EditText, Progress Dialog
-    Button Go_back,Student_login;
+    Button Go_back, Student_login;
     EditText Student_ID, Student_Password;
     ProgressDialog progressDialog;
 
@@ -43,7 +43,7 @@ public class Student_Login extends AppCompatActivity {
     FirebaseUser mUser;
 
     // Lottie animation
-    LottieAnimationView success,confetti1,confetti2,confetti3;
+    LottieAnimationView success, confetti1, confetti2, confetti3;
 
 
     @Override
@@ -60,22 +60,19 @@ public class Student_Login extends AppCompatActivity {
         // Initializing Firebase Auth
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        
+
         // Initializing Button
-        Go_back = (Button)findViewById(R.id.Go_back);
-        Student_login = (Button)findViewById(R.id.Student_login);
+        Go_back = (Button) findViewById(R.id.Go_back);
+        Student_login = (Button) findViewById(R.id.Student_login);
 
         // Initializing Input field Variables
         Student_ID = findViewById(R.id.Student_ID);
         Student_Password = findViewById(R.id.Student_Password);
-        Intent intent = (new Intent(Student_Login.this,Student_Nav.class));
+        Intent intent = (new Intent(Student_Login.this, Student_Nav.class));
         intent.putExtra("s", String.valueOf(Student_ID));
 
         // Initializing Database
         databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
-
-
-
 
 
         Go_back.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +90,7 @@ public class Student_Login extends AppCompatActivity {
                 PerformLogin();
 
             }
+
             // Making a function to Perform Login
             private void PerformLogin() {
                 String Std_ID = Student_ID.getText().toString();
@@ -100,32 +98,32 @@ public class Student_Login extends AppCompatActivity {
 
 
                 // Checking if the Edit Text is empty or incorrect
-                if(Std_ID.isEmpty()){
+                if (Std_ID.isEmpty()) {
                     Student_ID.setError("Incorrect Student I.D");
                     Student_ID.requestFocus();
 
-                }else if(Std_pass.isEmpty()){
+                } else if (Std_pass.isEmpty()) {
                     Student_Password.setError("Incorrect Password");
                     Student_Password.requestFocus();
 
-                }else if(Std_pass.length()<6){
+                } else if (Std_pass.length() < 6) {
                     Student_Password.setError("Incorrect Password");
                     Student_Password.requestFocus();
 
-                }else{
+                } else {
 
                     databaseReference.child("Student").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                             // Check if Student ID exists in firebase realtime datatbase
-                            if(snapshot.hasChild(Std_ID)){
+                            if (snapshot.hasChild(Std_ID)) {
 
                                 // Student ID exists
                                 // checking if the user entered the correct password
                                 final String getPassword = snapshot.child(Std_ID).child("Password").getValue(String.class);
 
-                                if(getPassword.equals(Std_pass)){
+                                if (getPassword.equals(Std_pass)) {
                                     success.playAnimation();
                                     confetti1.playAnimation();
                                     confetti2.playAnimation();
@@ -142,16 +140,16 @@ public class Student_Login extends AppCompatActivity {
                                             SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, Context.MODE_PRIVATE);
                                             SharedPreferences.Editor editor = sharedPreferences1.edit();
 
-                                            editor.putString("stud_id",Student_ID.getText().toString() );
+                                            editor.putString("stud_id", Student_ID.getText().toString());
                                             editor.commit();
 //                                            Toast.makeText(Student_Login.this, "ID Password Saved!!!", Toast.LENGTH_SHORT).show();
 
-                                            editor.putBoolean("hasLoggedIn1",true);
+                                            editor.putBoolean("hasLoggedIn1", true);
                                             editor.commit();
                                             editor.apply();
 
                                             // Intent to profile activity
-                                            Intent intent1 = (new Intent(Student_Login.this,Student_Nav.class));
+                                            Intent intent1 = (new Intent(Student_Login.this, Student_Nav.class));
                                             startActivity(intent1);
                                             finish();
                                             Toast.makeText(Student_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
@@ -160,37 +158,23 @@ public class Student_Login extends AppCompatActivity {
                                             new Handler().postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    success.setVisibility(View.INVISIBLE);
-                                                    confetti1.setVisibility(View.INVISIBLE);
-                                                    confetti2.setVisibility(View.INVISIBLE);
-                                                    confetti3.setVisibility(View.INVISIBLE);
+                                                    success.setVisibility(View.GONE);
+                                                    confetti1.setVisibility(View.GONE);
+                                                    confetti2.setVisibility(View.GONE);
+                                                    confetti3.setVisibility(View.GONE);
                                                 }
                                             }, 3500);
-
-
-
-
 
 
                                         }
                                     }, 5000);
 
 
-
-
-
-
-
-
-
-
-                                }
-                                else{
+                                } else {
                                     Student_Password.setError("Incorrect Password");
                                     Student_Password.requestFocus();
                                 }
-                            }
-                            else{
+                            } else {
                                 Student_ID.setError("Incorrect Student I.D");
                                 Student_ID.requestFocus();
                                 Toast.makeText(Student_Login.this, "Student I.D Doesn't Exist", Toast.LENGTH_SHORT).show();
@@ -206,8 +190,6 @@ public class Student_Login extends AppCompatActivity {
                         }
                     });
                 }
-
-
 
 
             }

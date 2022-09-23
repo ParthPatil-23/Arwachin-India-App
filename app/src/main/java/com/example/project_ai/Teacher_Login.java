@@ -21,14 +21,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-
 public class Teacher_Login extends AppCompatActivity {
 
     // If already Logged In don't have to log again
     public static String PREFS_NAME = "MyPrefsFile";
 
     // Importing Button, EditText, Progress Dialog
-    Button Go_back,Teacher_login;
+    Button Go_back, Teacher_login;
     EditText Teacher_ID, Teacher_Password;
     ProgressDialog progressDialog;
 
@@ -48,8 +47,8 @@ public class Teacher_Login extends AppCompatActivity {
         mUser = mAuth.getCurrentUser();
 
         // initializing Button
-        Go_back = (Button)findViewById(R.id.Go_back);
-        Teacher_login = (Button)findViewById(R.id.Teacher_login);
+        Go_back = (Button) findViewById(R.id.Go_back);
+        Teacher_login = (Button) findViewById(R.id.Teacher_login);
 
         // Initializing Input field Variables
         Teacher_ID = findViewById(R.id.Teacher_ID);
@@ -57,8 +56,6 @@ public class Teacher_Login extends AppCompatActivity {
 
         // Initializing Database
         databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
-
-
 
 
         Go_back.setOnClickListener(new View.OnClickListener() {
@@ -85,52 +82,50 @@ public class Teacher_Login extends AppCompatActivity {
 
 
                 // Checking if the Edit Text is empty or incorrect
-                if(Teach_ID.isEmpty()){
+                if (Teach_ID.isEmpty()) {
                     Teacher_ID.setError("Incorrect Teacher I.D");
                     Teacher_ID.requestFocus();
 
-                }else if(Teach_pass.isEmpty()){
+                } else if (Teach_pass.isEmpty()) {
                     Teacher_Password.setError("Incorrect Password");
                     Teacher_Password.requestFocus();
 
-                }else if(Teach_pass.length()<6){
+                } else if (Teach_pass.length() < 6) {
                     Teacher_Password.setError("Incorrect Password");
                     Teacher_Password.requestFocus();
 
-                }else{
+                } else {
                     databaseReference.child("Teachers").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                             // Check if Teacher ID exists in firebase realtime database
-                            if(snapshot.hasChild(Teach_ID)){
+                            if (snapshot.hasChild(Teach_ID)) {
 
                                 // Teacher ID exists
                                 // checking if the user entered the correct password
                                 final String getPassword = snapshot.child(Teach_ID).child("Password").getValue(String.class);
 
-                                if(getPassword.equals(Teach_pass)){
+                                if (getPassword.equals(Teach_pass)) {
                                     Toast.makeText(Teacher_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
 
                                     // Opening Teacher Navigation
-                                    startActivity(new Intent(Teacher_Login.this,Teacher_Nav.class));
+                                    startActivity(new Intent(Teacher_Login.this, Teacher_Nav.class));
 
                                     // Trying to not show login again after once Loged In
-                                    SharedPreferences sharedPreferences2 = getSharedPreferences(Teacher_Login.PREFS_NAME,0);
+                                    SharedPreferences sharedPreferences2 = getSharedPreferences(Teacher_Login.PREFS_NAME, 0);
                                     SharedPreferences.Editor editor = sharedPreferences2.edit();
 
-                                    editor.putBoolean("hasLoggedIn2",true);
+                                    editor.putBoolean("hasLoggedIn2", true);
                                     editor.commit();
 
-                                    startActivity(new Intent(Teacher_Login.this,Teacher_Nav.class));
+                                    startActivity(new Intent(Teacher_Login.this, Teacher_Nav.class));
                                     finish();
-                                }
-                                else{
+                                } else {
                                     Teacher_Password.setError("Incorrect Password");
                                     Teacher_Password.requestFocus();
                                 }
-                            }
-                            else{
+                            } else {
                                 Teacher_ID.setError("Incorrect Teacher I.D");
                                 Teacher_ID.requestFocus();
                                 Toast.makeText(Teacher_Login.this, "Teacher I.D Doesn't Exist", Toast.LENGTH_SHORT).show();
@@ -144,8 +139,6 @@ public class Teacher_Login extends AppCompatActivity {
                         }
                     });
                 }
-
-
 
 
             }

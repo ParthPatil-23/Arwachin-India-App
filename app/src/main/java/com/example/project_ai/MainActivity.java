@@ -11,14 +11,15 @@ public class MainActivity extends AppCompatActivity {
 
     // Importing Buttons for Student and Teacher Login
     Button student_btn, teacher_btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Initialising Buttons
-        student_btn = (Button)findViewById(R.id.student_btn);
-        teacher_btn = (Button)findViewById(R.id.teacher_btn);
+        student_btn = (Button) findViewById(R.id.student_btn);
+        teacher_btn = (Button) findViewById(R.id.teacher_btn);
 
 
         // Adding Functions to the Student Button
