@@ -21,9 +21,10 @@
         <entry key="app/src/main/res/layout/activity_planner.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_student_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_student_nav.xml" value="0.25495495495495496" />
+        <entry key="app/src/main/res/layout/activity_student_nav.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_teacher_login.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/layout/activity_teacher_nav.xml" value="0.25495495495495496" />
+        <entry key="app/src/main/res/layout/activity_to_do.xml" value="0.24188034188034188" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25495495495495496" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.25495495495495496" />
       </map>

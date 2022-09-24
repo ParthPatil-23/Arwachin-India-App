@@ -57,6 +57,10 @@ dependencies {
     // Animation for Lottie
     implementation 'com.airbnb.android:lottie:5.2.0'
 
+    // All the charts and graphs
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+
 
 
 

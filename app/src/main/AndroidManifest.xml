@@ -18,6 +18,9 @@
         android:theme="@style/Theme.ProjectAI"
         tools:targetApi="31">
         <activity
+            android:name=".To_Do"
+            android:exported="false" />
+        <activity
             android:name=".No_Internet"
             android:exported="false" />
         <activity
