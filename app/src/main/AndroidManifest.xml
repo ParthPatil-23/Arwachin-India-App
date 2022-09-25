@@ -18,6 +18,12 @@
         android:theme="@style/Theme.ProjectAI"
         tools:targetApi="31">
         <activity
+            android:name=".Extra"
+            android:exported="false" />
+        <activity
+            android:name=".Upcoming_event"
+            android:exported="false" />
+        <activity
             android:name=".To_Do"
             android:exported="false" />
         <activity

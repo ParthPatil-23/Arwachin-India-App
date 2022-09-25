@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Upcoming_event"
+    android:background="@color/darkgrey">
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="222dp"
+        android:layout_height="39dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="84dp"
+        android:fontFamily="sans-serif-black"
+        android:text="2 events found"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cardView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/back3"
+        android:layout_width="39dp"
+        android:layout_height="37dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019"
+        app:srcCompat="@drawable/ic_baseline_keyboard_backspace_24_b" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="370dp"
+            android:layout_height="200dp"
+            android:background="@color/grey">
+
+
+            <TextView
+                android:id="@+id/Goonjdate"
+                android:layout_width="222dp"
+                android:layout_height="39dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="132dp"
+                android:fontFamily="@font/fallingsky"
+                android:textColor="@color/white"
+                android:text="Goonj"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="222dp"
+                android:layout_height="39dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="132dp"
+                android:layout_marginBottom="72dp"
+                android:fontFamily="@font/fallingsky"
+                android:text="Date : 12-Jan-2023"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="284dp"
+                android:layout_height="49dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="25dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/fallingsky"
+                android:text="Event : Anual Function"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.186"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="116dp"
+                android:layout_height="116dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Goonjdate"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/goonj" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView6"
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="370dp"
+            android:layout_height="200dp"
+            android:background="@color/grey">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="284dp"
+                android:layout_height="49dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="132dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/fallingsky"
+                android:text="Event : Graduation"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="222dp"
+                android:layout_height="39dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="132dp"
+                android:layout_marginBottom="72dp"
+                android:fontFamily="@font/fallingsky"
+                android:textColor="@color/white"
+                android:text="Date : 06-Feb-2023"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/fonderday"
+                android:layout_width="222dp"
+                android:layout_height="39dp"
+                android:textColor="@color/white"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/fallingsky"
+                android:text="Founder's Day"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="122dp"
+                android:layout_height="151dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="33dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView19"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/graduation" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

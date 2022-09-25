@@ -17,12 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
-import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -37,12 +33,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+
+
 public class Student_Nav extends AppCompatActivity {
 
     public static String PREFS_NAME = "MyPrefsFile";
 
     Button add, delete;
-    TextView tv1,tv2,tv3,tv4,tv5,maths_m,eng_m,sci_m,hin_m,sst_m;
+    TextView tv1, tv2, tv3, tv4, tv5, maths_m, eng_m, sci_m, hin_m, sst_m;
     PieChart pieChart1;
 
     // Database reference
@@ -85,6 +83,8 @@ public class Student_Nav extends AppCompatActivity {
 
 
 
+
+
         // Checking if the device is connected to internet
         if (!isConnected(Student_Nav.this)) {
             Intent intent3 = new Intent(Student_Nav.this, No_Internet.class);
@@ -95,46 +95,43 @@ public class Student_Nav extends AppCompatActivity {
             add.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(Student_Nav.this, To_Do.class);
+                    Intent intent = new Intent(getApplicationContext(), To_Do.class);
+
                     startActivity(intent);
+
                 }
             });
             // Calling function to check if To-Do list had values and to add elements to the list.
             adding2();
 
 
-
-
             delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Nav.PREFS_NAME, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences1.edit();
+                    SharedPreferences sharedPreferences2 = getSharedPreferences(Student_Nav.PREFS_NAME, Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor2 = sharedPreferences2.edit();
 
 
                     tv1.setText(null);
-                    editor.putString("add1",null);
-                    editor.commit();
+                    editor2.putString("add1", null);
+                    editor2.apply();
                     tv2.setText(null);
-                    editor.putString("add2",null);
-                    editor.commit();
+                    editor2.putString("add2", null);
+                    editor2.apply();
                     tv3.setText(null);
-                    editor.putString("add3",null);
-                    editor.commit();
+                    editor2.putString("add3", null);
+                    editor2.apply();
                     tv4.setText(null);
-                    editor.putString("add4",null);
-                    editor.commit();
+                    editor2.putString("add4", null);
+                    editor2.apply();
                     tv5.setText(null);
-                    editor.putString("add5",null);
-                    editor.commit();
+                    editor2.putString("add5", null);
+                    editor2.apply();
 
 
                 }
             });
-
-
-
 
 
             // Performing Item Selected listerner
@@ -145,7 +142,7 @@ public class Student_Nav extends AppCompatActivity {
                         case R.id.Planner:
                             startActivity(new Intent(getApplicationContext()
                                     , Planner.class));
-                            overridePendingTransition(0, 0);
+                            overridePendingTransition(0,0);
                             return true;
 
                         case R.id.Arwachin:
@@ -207,7 +204,6 @@ public class Student_Nav extends AppCompatActivity {
     }
 
 
-    // Function To check if the There are any Elements in To-Do list
     protected void adding1(){
 
         SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Nav.PREFS_NAME, Context.MODE_PRIVATE);
@@ -242,7 +238,6 @@ public class Student_Nav extends AppCompatActivity {
 
     }
 
-    // Funtion to add elemts to the To-Do list
     protected void adding2(){
         Bundle a = getIntent().getExtras();
 
@@ -330,8 +325,7 @@ public class Student_Nav extends AppCompatActivity {
     }
 
     // Function Loading the Pie chart values
-    private void loadpiechart(){
-
+    private void loadpiechart() {
 
 
         // Variables to set attendence in the pie graphs
@@ -381,19 +375,19 @@ public class Student_Nav extends AppCompatActivity {
 
 
                 ArrayList<PieEntry> entries = new ArrayList<>();
-                entries.add(new PieEntry(pie_p_days,"Present"));
-                entries.add(new PieEntry(pie_a_days,"Absent"));
-                entries.add(new PieEntry(Holidays,"School Holidays"));
-                entries.add(new PieEntry(pie_left_days,"School Days left"));
+                entries.add(new PieEntry(pie_p_days, "Present"));
+                entries.add(new PieEntry(pie_a_days, "Absent"));
+                entries.add(new PieEntry(Holidays, "School Holidays"));
+                entries.add(new PieEntry(pie_left_days, "School Days left"));
 
                 ArrayList<Integer> colors = new ArrayList<>();
-                for (int color: ColorTemplate.MATERIAL_COLORS){
+                for (int color : ColorTemplate.MATERIAL_COLORS) {
                     colors.add(color);
                 }
-                for (int color: ColorTemplate.VORDIPLOM_COLORS){
+                for (int color : ColorTemplate.VORDIPLOM_COLORS) {
                     colors.add(color);
                 }
-                PieDataSet dataSet = new PieDataSet(entries,"Attendence");
+                PieDataSet dataSet = new PieDataSet(entries, "Attendence");
                 dataSet.setColors(colors);
 
                 PieData data = new PieData(dataSet);
@@ -409,7 +403,6 @@ public class Student_Nav extends AppCompatActivity {
                 pieChart1.animateY(2500, Easing.EaseInOutQuad);
 
 
-
             }
 
             @Override
@@ -417,8 +410,6 @@ public class Student_Nav extends AppCompatActivity {
 
             }
         });
-
-
 
 
     }

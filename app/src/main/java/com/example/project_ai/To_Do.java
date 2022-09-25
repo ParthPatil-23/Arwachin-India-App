@@ -40,6 +40,7 @@ public class To_Do extends AppCompatActivity {
 
                 }else{
 
+
                     Intent intent = new Intent(To_Do.this, Student_Nav.class);
                     intent.putExtra("add",et.getText().toString());
                     startActivity(intent);

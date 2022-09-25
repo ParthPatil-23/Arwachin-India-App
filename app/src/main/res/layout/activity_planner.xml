@@ -6,13 +6,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Planner">
+    tools:context=".Planner"
+    android:background="@color/darkgrey">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
+        android:background="@color/lightgrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

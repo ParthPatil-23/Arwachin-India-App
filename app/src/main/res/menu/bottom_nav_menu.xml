@@ -3,13 +3,13 @@
 
     <item
         android:id="@+id/Home"
-        android:icon="@drawable/home_no"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="Home" />
 
-    <item
-        android:id="@+id/Planner"
-        android:icon="@drawable/calender"
-        android:title="Planner" />
+<!--    <item-->
+<!--        android:id="@+id/Planner"-->
+<!--        android:icon="@drawable/ic_baseline_calendar_today_24"-->
+<!--        android:title="Planner" />-->
 
     <item
         android:id="@+id/Arwachin"
@@ -18,11 +18,11 @@
 
     <item
         android:id="@+id/DashBoard"
-        android:icon="@drawable/book"
-        android:title="DashBoard" />
+        android:icon="@drawable/ic_baseline_menu_book_24"
+        android:title="HomeWork" />
 
     <item
         android:id="@+id/Profile"
-        android:icon="@drawable/resume_no"
+        android:icon="@drawable/ic_baseline_person_pin_24"
         android:title="Profile" />
 </menu>

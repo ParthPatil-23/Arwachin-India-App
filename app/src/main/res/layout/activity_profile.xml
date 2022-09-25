@@ -11,7 +11,7 @@
         android:id="@+id/BottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
+        android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -29,13 +29,14 @@
         android:orientation="vertical"
         tools:context=".MainActivity"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-284dp">
+        tools:layout_editor_absoluteY="-284dp"
+        android:background="@color/grey">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="#fece2f"
+            android:background="@color/darkgrey"
             android:padding="20dp">
 
             <ImageView
@@ -55,7 +56,7 @@
                 android:fontFamily="@font/machinegunk"
                 android:includeFontPadding="false"
                 android:text="Parth Patil"
-                android:textColor="#000"
+                android:textColor="@color/white"
                 android:textSize="25sp" />
 
             <TextView
@@ -65,6 +66,7 @@
                 android:layout_below="@id/fullname_field"
                 android:layout_marginLeft="10dp"
                 android:text=""
+                android:textColor="@color/lightgrey"
                 android:layout_toRightOf="@+id/profile_image"
                 android:includeFontPadding="false"
                 android:textSize="14sp" />
@@ -84,18 +86,15 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardBackgroundColor="#fece2f"
-                app:cardElevation="10dp">
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:background="@color/grey">
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_launcher_background" />
 
                     <TextView
                         android:id="@+id/payment_label1"
@@ -104,6 +103,8 @@
                         android:layout_centerInParent="true"
                         android:hint="Class Rank"
                         android:includeFontPadding="false"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
                         android:textSize="20sp" />
 
                     <TextView
@@ -114,6 +115,7 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/machinegunk"
                         android:hint="4th"
+                        android:textColorHint="@color/white"
                         android:includeFontPadding="false"
                         android:textSize="20sp" />
 
@@ -126,26 +128,23 @@
                 android:layout_height="125dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="#fece2f"
-                app:cardElevation="10dp">
+                app:cardBackgroundColor="@color/grey"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp">
 
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_launcher_background" />
 
                     <TextView
                         android:id="@+id/payment_label2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
-                        android:hint="Persentage"
+                        android:hint="Percentage"
+                        android:textColorHint="@color/white"
                         android:includeFontPadding="false"
                         android:textSize="20sp" />
 
@@ -157,6 +156,7 @@
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/machinegunk"
                         android:hint="89%"
+                        android:textColorHint="@color/white"
                         android:includeFontPadding="false"
                         android:textSize="20sp" />
 
@@ -179,84 +179,133 @@
                 android:padding="20dp">
 
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/full_name_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Full Name"
-                    android:textStyle="bold">
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
+                    android:textStyle="bold"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="name"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/full_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:drawablePadding="10dp"
+                        android:editable="false"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:editable="false"
+                        android:textColor="@color/white"
                         android:textSize="25dp" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/dob_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Date Of Birth"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Date Of Birth"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/dob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawablePadding="10dp"
+                        android:editable="false"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
-                        android:drawablePadding="10dp"
-                        android:textSize="25dp"
-                        android:editable="false" />
+                        android:textColor="@color/white"
+                        android:textSize="25dp" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/roll_no_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Roll Number"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Roll Number"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/roll_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/class_tech_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Class Teacher"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Class Teacher"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/class_tech"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -264,42 +313,66 @@
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/father_name_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Father's Name"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Father's Name"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/father_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/mother_name_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Mother's Name"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Mother's Name"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/mother_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -307,21 +380,33 @@
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/class_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Class"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Class"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/class1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -329,21 +414,33 @@
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/mess_fees_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Mess Fees"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Mess Fees"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/mess_fees"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -351,21 +448,33 @@
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/bus_fees_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Bus Fees"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Bus Fees"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/bus_fees"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -373,21 +482,33 @@
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/tot_sch_fees_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Total School Fees"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Total School Fees"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/tot_sch_fees"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -395,41 +516,66 @@
                         android:drawablePadding="10dp"
                         android:editable="false" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </androidx.cardview.widget.CardView>
 
-                <com.google.android.material.textfield.TextInputLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/tot_sch_fees_paid_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:hint="Total Fees Paid"
+                    app:cardElevation="15dp"
+                    app:cardCornerRadius="5dp"
                     android:textStyle="bold">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:elevation="2dp"
+                        android:text="Total Fees Paid"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/tot_sch_fees_paid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#ffffff"
+                        android:background="@color/lightgrey"
+                        android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
+                </androidx.cardview.widget.CardView>
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/tot_sch_fees_left_tv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         android:hint="Total Fees Left"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="5dp"
                         android:textStyle="bold">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="35dp"
+                            android:elevation="2dp"
+                            android:text="Total Fees Left"
+                            android:textColor="@color/white"
+                            android:textSize="13dp" />
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/tot_sch_fees_left"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="#ffffff"
+                            android:background="@color/lightgrey"
+                            android:textColor="@color/white"
                             android:drawableLeft="@drawable/ic_baseline_person_24"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
@@ -437,39 +583,37 @@
                             android:drawablePadding="10dp"
                             android:editable="false" />
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <androidx.cardview.widget.CardView
                         android:id="@+id/spaefiller2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
+                        app:cardElevation="15dp"
+                        app:cardCornerRadius="5dp"
                         android:textStyle="bold">
+
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/spacefiller"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/white"
+                            android:background="@color/grey"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
                             android:textSize="25dp"
                             android:drawablePadding="10dp"
                             android:editable="false" />
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                    </androidx.cardview.widget.CardView>
 
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+        </ScrollView>
 
 
 
             </LinearLayout>
-        </ScrollView>
-
-
-    </LinearLayout>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
