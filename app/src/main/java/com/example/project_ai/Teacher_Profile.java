@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,76 +17,52 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Teacher_Nav extends AppCompatActivity {
+import org.w3c.dom.Text;
 
-    ImageView progress, profile,homework;
-    TextView teachername;
+public class Teacher_Profile extends AppCompatActivity {
 
-    // If already Logged In don't have to log again
-    public static String PREFS_NAME = "MyPrefsFile";
+    TextView designation,name,id,subject,fullname;
+    ImageView back6;
 
     // Database reference
     private DatabaseReference databaseReference;
 
+    // If already Logged In don't have to log again
+    public static String PREFS_NAME = "MyPrefsFile";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_nav);
+        setContentView(R.layout.activity_teacher_profile);
 
-        progress = findViewById(R.id.progress);
-        profile = findViewById(R.id.profile);
-        homework = findViewById(R.id.homework);
-        teachername = findViewById(R.id.teachername);
+        designation = findViewById(R.id.designation);
+        name = findViewById(R.id.T_Name);
+        id = findViewById(R.id.id);
+        subject = findViewById(R.id.subject);
+        fullname = findViewById(R.id.fullname);
+        back6 = findViewById(R.id.back6);
 
-        loaddata();
-
-        homework.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Teacher_Nav.this,Homework.class);
-                startActivity(intent);
-
-            }
-        });
-
-        progress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Teacher_Nav.this,ClassProgress.class);
-                startActivity(intent);
-            }
-        });
-
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Teacher_Nav.this,Teacher_Profile.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
-
-    }
-
-    private void loaddata(){
         // Initializing Database
         databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
-
 
         databaseReference.child("Teachers").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // Checking if the student have already login or not
                 SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, 0);
                 String Tech_ID = sharedPreferences1.getString("teacher_id", "");
 
                 final String Teacher_Name = snapshot.child(Tech_ID).child("Name").getValue(String.class);
+                final String t_id = snapshot.child(Tech_ID).child("I D").getValue(String.class);
+                final String Subject = snapshot.child(Tech_ID).child("Subject").getValue(String.class);
+                final String Designation = snapshot.child(Tech_ID).child("Desination").getValue(String.class);
 
-                teachername.setText(Teacher_Name);
+                fullname.setText(Teacher_Name);
+                name.setText(Teacher_Name);
+                id.setText(t_id);
+                subject.setText(Subject);
+                designation.setText(Designation);
+
+
 
             }
 
@@ -94,7 +71,14 @@ public class Teacher_Nav extends AppCompatActivity {
 
             }
         });
+
+        back6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Teacher_Profile.this,Teacher_Nav.class);
+                startActivity(intent);
+            }
+        });
+
     }
-
-
 }

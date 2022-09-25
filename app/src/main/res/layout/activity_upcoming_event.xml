@@ -111,17 +111,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView18"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="116dp"
-                android:layout_height="116dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/textView16"
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/arrow"
+                android:layout_width="120dp"
+                android:layout_height="95dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/Goonjdate"
+                app:layout_constraintHorizontal_bias="0.952"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/goonj" />
+                app:layout_constraintVertical_bias="0.152"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/guitarist" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -193,18 +196,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="122dp"
-                android:layout_height="151dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="33dp"
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/grauation"
+                android:layout_width="120dp"
+                android:layout_height="95dp"
+                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView19"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.048"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/graduation" />
+                app:layout_constraintVertical_bias="0.504"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/graduation" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

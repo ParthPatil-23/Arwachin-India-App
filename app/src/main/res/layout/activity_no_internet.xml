@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".No_Internet"
-    android:background="#FF343041">
+    android:background="#FFFFFF">
 
 
     <com.airbnb.lottie.LottieAnimationView
@@ -14,13 +14,13 @@
         android:layout_height="400dp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.753"
+        app:layout_constraintVertical_bias="0.748"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/internet_access_animation" />
+        app:lottie_rawRes="@raw/no_internet" />
 
     <TextView
         android:id="@+id/textView3"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/machinegunk"
         android:text="Oooops !! \nNO INTERNET\nTry again Later"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,13 +43,12 @@
         android:layout_height="31dp"
         android:fontFamily="@font/machinegunk"
         android:text="Error"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/server_error"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.868" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

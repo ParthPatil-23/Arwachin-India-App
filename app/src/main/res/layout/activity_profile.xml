@@ -47,7 +47,7 @@
                 android:src="@drawable/ic_launcher_background" />
 
             <TextView
-                android:id="@+id/fullname_field"
+                android:id="@+id/fullname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -63,7 +63,7 @@
                 android:id="@+id/username_field"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fullname_field"
+                android:layout_below="@id/fullname"
                 android:layout_marginLeft="10dp"
                 android:text=""
                 android:textColor="@color/lightgrey"

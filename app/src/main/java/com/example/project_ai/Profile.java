@@ -8,9 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.wifi.hotspot2.pps.HomeSp;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -50,7 +48,7 @@ public class Profile extends AppCompatActivity {
 
 
         // Initialzing Variables for content
-        fullname_field = (TextView) findViewById(R.id.fullname_field);
+        fullname_field = (TextView) findViewById(R.id.fullname);
         username_field = findViewById(R.id.username_field);
         full_name = findViewById(R.id.full_name);
         dob = findViewById(R.id.dob);

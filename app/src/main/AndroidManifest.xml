@@ -18,6 +18,15 @@
         android:theme="@style/Theme.ProjectAI"
         tools:targetApi="31">
         <activity
+            android:name=".Teacher_Profile"
+            android:exported="false" />
+        <activity
+            android:name=".ClassProgress"
+            android:exported="false" />
+        <activity
+            android:name=".Homework"
+            android:exported="false" />
+        <activity
             android:name=".Extra"
             android:exported="false" />
         <activity

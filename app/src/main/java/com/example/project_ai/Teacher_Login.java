@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -107,6 +108,22 @@ public class Teacher_Login extends AppCompatActivity {
                                 final String getPassword = snapshot.child(Teach_ID).child("Password").getValue(String.class);
 
                                 if (getPassword.equals(Teach_pass)) {
+
+
+                                    // Trying to not show login again after once Loged In
+                                    SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor1 = sharedPreferences1.edit();
+
+                                    editor1.putString("teacher_id", Teacher_ID.getText().toString());
+                                    editor1.commit();
+
+
+
+
+
+
+
+
                                     Toast.makeText(Teacher_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();
 
                                     // Opening Teacher Navigation

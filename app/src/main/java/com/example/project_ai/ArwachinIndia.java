@@ -8,11 +8,13 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +27,7 @@ public class ArwachinIndia extends AppCompatActivity {
     // Variables for class progress
     TextView p_maths,p_english,p_sst,p_hindi,p_science;
     ImageView desk,event,extracurricular;
+    LottieAnimationView arrow;
 
     // Database reference
     private DatabaseReference databaseReference;
@@ -35,6 +38,9 @@ public class ArwachinIndia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arwachin_india);
+
+        // Animation
+        arrow = findViewById(R.id.arrow);
 
         // Initialising variables for class progress
         p_maths = findViewById(R.id.p_maths);
@@ -61,8 +67,31 @@ public class ArwachinIndia extends AppCompatActivity {
         extracurricular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ArwachinIndia.this,Extra.class);
-                startActivity(intent);
+
+                arrow.setVisibility(View.VISIBLE);
+                arrow.playAnimation();
+
+                // Setting the delay to play animation
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+
+
+
+                        Intent intent = new Intent(ArwachinIndia.this,Extra.class);
+                        startActivity(intent);
+
+
+
+                    }
+                },2500);
+
+
+
+
+
+
+
             }
         });
 

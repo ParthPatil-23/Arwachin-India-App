@@ -311,7 +311,7 @@ public class Student_Nav extends AppCompatActivity {
         pieChart1.setDrawHoleEnabled(true);
         pieChart1.setUsePercentValues(true);
         pieChart1.setEntryLabelTextSize(8);
-        pieChart1.setEntryLabelColor(Color.BLACK);
+        pieChart1.setEntryLabelColor(Color.WHITE);
         pieChart1.setCenterText("Attendence");
         pieChart1.setCenterTextSize(12);
         pieChart1.getDescription().setEnabled(false);
@@ -394,7 +394,7 @@ public class Student_Nav extends AppCompatActivity {
                 data.setDrawValues(true);
                 data.setValueFormatter(new PercentFormatter((pieChart1)));
                 data.setValueTextSize(12f);
-                data.setValueTextColor(android.R.color.black);
+                data.setValueTextColor(android.R.color.white);
 
 
                 pieChart1.setData(data);

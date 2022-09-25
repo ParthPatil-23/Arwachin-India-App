@@ -180,25 +180,30 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/constraintLayout"
         android:layout_width="350dp"
         android:layout_height="260dp"
-        app:cardElevation="11dp"
-        app:cardCornerRadius="10dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
         app:cardBackgroundColor="#424242"
-        app:flow_horizontalAlign="center">
+        app:cardCornerRadius="10dp"
+        app:cardElevation="11dp"
+        app:flow_horizontalAlign="center"
+        app:layout_constraintBottom_toTopOf="@+id/piechart1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="350dp"
             android:layout_height="260dp"
             android:background="@color/grey"
-            >
+            tools:layout_editor_absoluteX="19dp"
+            tools:layout_editor_absoluteY="28dp">
 
             <TextView
                 android:id="@+id/textView5"
@@ -279,8 +284,8 @@
                 android:layout_toEndOf="@+id/english"
                 android:fontFamily="@font/fallingsky"
                 android:text=""
-                android:textSize="18dp"
                 android:textColor="#C5C5C5"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/sst"
                 app:layout_constraintStart_toEndOf="@+id/sst"
                 app:layout_constraintTop_toTopOf="@+id/sst"
@@ -295,8 +300,8 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/fallingsky"
                 android:text="Science"
-                android:textSize="18dp"
                 android:textColor="#C5C5C5"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toTopOf="@+id/hindi"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/english" />
@@ -311,8 +316,8 @@
                 android:layout_toEndOf="@+id/science"
                 android:fontFamily="@font/fallingsky"
                 android:text=""
-                android:textSize="18dp"
                 android:textColor="#C5C5C5"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/hindi"
                 app:layout_constraintStart_toEndOf="@+id/hindi"
                 app:layout_constraintTop_toTopOf="@+id/hindi"
@@ -327,8 +332,8 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/fallingsky"
                 android:text="Hindi"
-                android:textSize="18dp"
                 android:textColor="#C5C5C5"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toTopOf="@+id/sst"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/science" />
@@ -343,8 +348,8 @@
                 android:layout_toEndOf="@+id/hindi"
                 android:fontFamily="@font/fallingsky"
                 android:text=""
-                android:textSize="18dp"
                 android:textColor="#C5C5C5"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/science"
                 app:layout_constraintStart_toEndOf="@+id/science"
                 app:layout_constraintTop_toTopOf="@+id/science"
@@ -359,8 +364,8 @@
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/fallingsky"
                 android:text="SST  "
-                android:textSize="18dp"
                 android:textColor="#C5C5C5"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/hindi" />
@@ -375,8 +380,8 @@
                 android:layout_toEndOf="@+id/sst"
                 android:fontFamily="@font/fallingsky"
                 android:text=""
-                android:textSize="18dp"
                 android:textColor="#C5C5C5"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="@+id/english"
                 app:layout_constraintStart_toEndOf="@+id/english"
                 app:layout_constraintTop_toTopOf="@+id/english"
@@ -403,15 +408,18 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart1"
         android:layout_width="337dp"
         android:layout_height="143dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="38dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.641" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
