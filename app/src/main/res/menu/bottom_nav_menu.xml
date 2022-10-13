@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/Home"
-        android:icon="@drawable/ic_baseline_home_24"
+        android:icon="@drawable/home"
         android:title="Home" />
 
 <!--    <item-->
@@ -18,11 +18,11 @@
 
     <item
         android:id="@+id/DashBoard"
-        android:icon="@drawable/ic_baseline_menu_book_24"
+        android:icon="@drawable/booksicon"
         android:title="HomeWork" />
 
     <item
         android:id="@+id/Profile"
-        android:icon="@drawable/ic_baseline_person_pin_24"
+        android:icon="@drawable/avatar"
         android:title="Profile" />
 </menu>

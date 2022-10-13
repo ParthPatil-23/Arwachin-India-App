@@ -17,7 +17,7 @@ import java.util.HashMap;
 
 public class ClassProgress extends AppCompatActivity {
 
-    EditText maths_et,eng_et,hindi_et,sst_et,science_et,date_et;
+    EditText maths_et, eng_et, hindi_et, sst_et, science_et, date_et;
     Button upload;
     ImageView back5;
 
@@ -46,7 +46,7 @@ public class ClassProgress extends AppCompatActivity {
             public void onClick(View view) {
                 insertData();
 
-                Intent intent = new Intent(ClassProgress.this,Teacher_Nav.class);
+                Intent intent = new Intent(ClassProgress.this, Teacher_Nav.class);
                 startActivity(intent);
 
             }
@@ -55,14 +55,14 @@ public class ClassProgress extends AppCompatActivity {
         back5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ClassProgress.this,Teacher_Nav.class);
+                Intent intent = new Intent(ClassProgress.this, Teacher_Nav.class);
                 startActivity(intent);
             }
         });
 
     }
 
-    private void insertData(){
+    private void insertData() {
 
         String Maths = maths_et.getText().toString();
         String English = eng_et.getText().toString();
@@ -71,15 +71,13 @@ public class ClassProgress extends AppCompatActivity {
         String Science = science_et.getText().toString();
 
 
-
         HashMap hw = new HashMap();
-        hw.put("Maths",Maths);
-        hw.put("English",English);
-        hw.put("SST",SST);
-        hw.put("Science",Science);
-        hw.put("Hindi",Hindi);
+        hw.put("Maths", Maths);
+        hw.put("English", English);
+        hw.put("SST", SST);
+        hw.put("Science", Science);
+        hw.put("Hindi", Hindi);
         databaseReference.child("class").updateChildren(hw);
-
 
 
         Toast.makeText(this, "Home Work Uploaded", Toast.LENGTH_SHORT).show();

@@ -34,6 +34,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="@color/darkgrey"
@@ -55,7 +56,7 @@
                 android:layout_toRightOf="@+id/profile_image"
                 android:fontFamily="@font/machinegunk"
                 android:includeFontPadding="false"
-                android:text="Parth Patil"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="25sp" />
 
@@ -70,6 +71,7 @@
                 android:layout_toRightOf="@+id/profile_image"
                 android:includeFontPadding="false"
                 android:textSize="14sp" />
+
 
         </RelativeLayout>
 
@@ -186,14 +188,14 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Full Name"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold"
                     >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="name"
                         android:textColor="@color/white"
@@ -204,8 +206,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:drawablePadding="10dp"
+                        android:drawableLeft="@drawable/studentprofile"
+                        android:padding="10dp"
+                        android:drawablePadding="7dp"
                         android:editable="false"
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
@@ -221,13 +224,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Date Of Birth"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Date Of Birth"
                         android:textColor="@color/white"
@@ -238,7 +241,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
+                        android:drawableLeft="@drawable/calender"
+                        android:paddingLeft="7dp"
                         android:drawablePadding="10dp"
                         android:editable="false"
                         android:paddingTop="10dp"
@@ -255,13 +259,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Roll Number"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Roll Number"
                         android:textColor="@color/white"
@@ -273,8 +277,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/hash"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -288,13 +292,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Class Teacher"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Class Teacher"
                         android:textColor="@color/white"
@@ -306,8 +310,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/teacherprofile"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -322,13 +326,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Father's Name"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Father's Name"
                         android:textColor="@color/white"
@@ -340,8 +344,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/fatherf"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -355,13 +359,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Mother's Name"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Mother's Name"
                         android:textColor="@color/white"
@@ -373,8 +377,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/mother"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -389,13 +393,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Class"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Class"
                         android:textColor="@color/white"
@@ -407,8 +411,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/classroom"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -423,13 +427,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Mess Fees"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Mess Fees"
                         android:textColor="@color/white"
@@ -441,8 +445,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/food"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -457,13 +461,13 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Bus Fees"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="35dp"
+                        android:paddingLeft="40dp"
                         android:elevation="2dp"
                         android:text="Bus Fees"
                         android:textColor="@color/white"
@@ -475,8 +479,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/bus"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -491,7 +495,7 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Total School Fees"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
@@ -509,8 +513,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/ic_baseline_currency_rupee_24"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -525,7 +529,7 @@
                     android:layout_marginBottom="10dp"
                     android:hint="Total Fees Paid"
                     app:cardElevation="15dp"
-                    app:cardCornerRadius="5dp"
+                    app:cardCornerRadius="15dp"
                     android:textStyle="bold">
 
                     <TextView
@@ -543,8 +547,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/lightgrey"
                         android:textColor="@color/white"
-                        android:drawableLeft="@drawable/ic_baseline_person_24"
-                        android:paddingTop="10dp"
+                        android:drawableLeft="@drawable/ic_baseline_currency_rupee_24"
+                        android:padding="10dp"
                         android:paddingBottom="10dp"
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
@@ -558,7 +562,7 @@
                         android:layout_marginBottom="10dp"
                         android:hint="Total Fees Left"
                         app:cardElevation="15dp"
-                        app:cardCornerRadius="5dp"
+                        app:cardCornerRadius="15dp"
                         android:textStyle="bold">
 
                         <TextView
@@ -576,8 +580,8 @@
                             android:layout_height="wrap_content"
                             android:background="@color/lightgrey"
                             android:textColor="@color/white"
-                            android:drawableLeft="@drawable/ic_baseline_person_24"
-                            android:paddingTop="10dp"
+                            android:drawableLeft="@drawable/ic_baseline_currency_rupee_24"
+                            android:padding="10dp"
                             android:paddingBottom="10dp"
                             android:textSize="25dp"
                             android:drawablePadding="10dp"
@@ -591,7 +595,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
                         app:cardElevation="15dp"
-                        app:cardCornerRadius="5dp"
+                        app:cardCornerRadius="15dp"
                         android:textStyle="bold">
 
 

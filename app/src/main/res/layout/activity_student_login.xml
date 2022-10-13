@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00000000"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="127dp"
+        tools:layout_editor_absoluteY="208dp" />
 
     <EditText
         android:id="@+id/Student_ID"
@@ -29,49 +29,46 @@
         android:hint="Student I.D"
         android:inputType="textPersonName"
         android:paddingLeft="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/Student_Password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.974" />
 
     <EditText
         android:id="@+id/Student_Password"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginBottom="56dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Password"
-        android:paddingLeft="15dp"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingLeft="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/Student_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Student_ID"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/Student_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:text="Login"
         android:background="@drawable/input_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Student_Password"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.802" />
 
     <Button
         android:id="@+id/Go_back"

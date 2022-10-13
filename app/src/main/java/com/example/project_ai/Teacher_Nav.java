@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Teacher_Nav extends AppCompatActivity {
 
-    ImageView progress, profile,homework;
+    ImageView progress, profile, homework;
     TextView teachername;
 
     // If already Logged In don't have to log again
@@ -42,7 +42,7 @@ public class Teacher_Nav extends AppCompatActivity {
         homework.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Teacher_Nav.this,Homework.class);
+                Intent intent = new Intent(Teacher_Nav.this, Homework.class);
                 startActivity(intent);
 
             }
@@ -51,7 +51,7 @@ public class Teacher_Nav extends AppCompatActivity {
         progress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Teacher_Nav.this,ClassProgress.class);
+                Intent intent = new Intent(Teacher_Nav.this, ClassProgress.class);
                 startActivity(intent);
             }
         });
@@ -60,18 +60,15 @@ public class Teacher_Nav extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Teacher_Nav.this,Teacher_Profile.class);
+                Intent intent = new Intent(Teacher_Nav.this, Teacher_Profile.class);
                 startActivity(intent);
             }
         });
 
 
-
-
-
     }
 
-    private void loaddata(){
+    private void loaddata() {
         // Initializing Database
         databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
 

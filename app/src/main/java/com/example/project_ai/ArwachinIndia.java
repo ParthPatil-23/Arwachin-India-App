@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -25,13 +27,12 @@ import com.google.firebase.database.ValueEventListener;
 public class ArwachinIndia extends AppCompatActivity {
 
     // Variables for class progress
-    TextView p_maths,p_english,p_sst,p_hindi,p_science;
-    ImageView desk,event,extracurricular;
+    TextView p_maths, p_english, p_sst, p_hindi, p_science;
+    ImageView desk, event, extracurricular;
     LottieAnimationView arrow;
 
     // Database reference
     private DatabaseReference databaseReference;
-
 
 
     @Override
@@ -58,37 +59,30 @@ public class ArwachinIndia extends AppCompatActivity {
         event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ArwachinIndia.this,Upcoming_event.class);
+                Intent intent = new Intent(ArwachinIndia.this, Upcoming_event.class);
                 startActivity(intent);
             }
         });
+
+        // on click Desk
+        desk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:pricipal@arwachininida.com")));
+            }
+
+            private void desk2() {
+            }
+        });
+
 
         // On clicking extra__ img
         extracurricular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                arrow.setVisibility(View.VISIBLE);
-                arrow.playAnimation();
-
-                // Setting the delay to play animation
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-
-
-                        Intent intent = new Intent(ArwachinIndia.this,Extra.class);
-                        startActivity(intent);
-
-
-
-                    }
-                },2500);
-
-
-
-
+                Intent intent = new Intent(ArwachinIndia.this, Extra.class);
+                startActivity(intent);
 
 
 
@@ -175,32 +169,25 @@ public class ArwachinIndia extends AppCompatActivity {
         }
     }
 
-    private void loadprogress(){
-        // Initializing Database
-        databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
+    private void loadprogress() {
 
-        databaseReference.child("class").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                final String P_Maths = snapshot.child("Maths").getValue(String.class);
-                final String P_Sst = snapshot.child("SST").getValue(String.class);
-                final String P_Science = snapshot.child("Science").getValue(String.class);
-                final String P_Hindi = snapshot.child("Hindi").getValue(String.class);
-                final String P_Eng = snapshot.child("English").getValue(String.class);
+        SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Nav.PREFS_NAME, Context.MODE_PRIVATE);
+        String Std_ID = sharedPreferences1.getString("stud_id", "");
 
 
-                p_maths.setText(P_Maths);
-                p_english.setText(P_Science);
-                p_hindi.setText(P_Hindi);
-                p_science.setText(P_Science);
-                p_sst.setText(P_Sst);
-            }
+        String P_Maths = sharedPreferences1.getString("P_Maths", null);
+        String P_Sst = sharedPreferences1.getString("P_Sst", null);
+        String P_Science = sharedPreferences1.getString("P_Science", null);
+        String P_Hindi = sharedPreferences1.getString("P_Hindi", null);
+        String P_Eng = sharedPreferences1.getString("P_Eng", null);
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+        p_maths.setText(P_Maths);
+        p_english.setText(P_Science);
+        p_hindi.setText(P_Hindi);
+        p_science.setText(P_Science);
+        p_sst.setText(P_Sst);
+
     }
 
 }

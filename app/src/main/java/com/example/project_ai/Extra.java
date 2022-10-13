@@ -21,7 +21,7 @@ import org.w3c.dom.Text;
 public class Extra extends AppCompatActivity {
 
     ImageView back2;
-    TextView activity1, activity2,activity3,activity4,activity5;
+    TextView activity1, activity2, activity3, activity4, activity5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class Extra extends AppCompatActivity {
         back2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Extra.this,ArwachinIndia.class);
+                Intent intent = new Intent(Extra.this, ArwachinIndia.class);
                 startActivity(intent);
             }
         });
@@ -79,7 +79,6 @@ public class Extra extends AppCompatActivity {
 
             }
         });
-
 
 
     }

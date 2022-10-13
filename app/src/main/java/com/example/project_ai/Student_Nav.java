@@ -10,12 +10,14 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -34,7 +36,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 
-
 public class Student_Nav extends AppCompatActivity {
 
     public static String PREFS_NAME = "MyPrefsFile";
@@ -42,6 +43,8 @@ public class Student_Nav extends AppCompatActivity {
     Button add, delete;
     TextView tv1, tv2, tv3, tv4, tv5, maths_m, eng_m, sci_m, hin_m, sst_m;
     PieChart pieChart1;
+    LottieAnimationView conf1, conf2, conf3, task;
+
 
     // Database reference
     private DatabaseReference databaseReference;
@@ -50,6 +53,13 @@ public class Student_Nav extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_nav);
+
+        // Animation
+        task = findViewById(R.id.task);
+        conf1 = findViewById(R.id.conf1);
+        conf2 = findViewById(R.id.conf2);
+        conf3 = findViewById(R.id.conf3);
+
 
         // Marks Variables
         maths_m = findViewById(R.id.maths_m);
@@ -80,9 +90,6 @@ public class Student_Nav extends AppCompatActivity {
         // Calling charts
         setupPieChart();
         loadpiechart();
-
-
-
 
 
         // Checking if the device is connected to internet
@@ -129,6 +136,20 @@ public class Student_Nav extends AppCompatActivity {
                     editor2.putString("add5", null);
                     editor2.apply();
 
+                    task.playAnimation();
+                    conf1.playAnimation();
+                    conf2.playAnimation();
+                    conf3.playAnimation();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            task.setVisibility(View.GONE);
+                            conf1.setVisibility(View.GONE);
+                            conf2.setVisibility(View.GONE);
+                            conf3.setVisibility(View.GONE);
+                        }
+                    }, 2700);
 
                 }
             });
@@ -142,7 +163,7 @@ public class Student_Nav extends AppCompatActivity {
                         case R.id.Planner:
                             startActivity(new Intent(getApplicationContext()
                                     , Planner.class));
-                            overridePendingTransition(0,0);
+                            overridePendingTransition(0, 0);
                             return true;
 
                         case R.id.Arwachin:
@@ -204,7 +225,7 @@ public class Student_Nav extends AppCompatActivity {
     }
 
 
-    protected void adding1(){
+    protected void adding1() {
 
         SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Nav.PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences1.edit();
@@ -238,7 +259,7 @@ public class Student_Nav extends AppCompatActivity {
 
     }
 
-    protected void adding2(){
+    protected void adding2() {
         Bundle a = getIntent().getExtras();
 
         SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Nav.PREFS_NAME, Context.MODE_PRIVATE);
@@ -301,7 +322,7 @@ public class Student_Nav extends AppCompatActivity {
                     }
                 }
             }
-        }else{
+        } else {
             return;
         }
     }
@@ -332,84 +353,68 @@ public class Student_Nav extends AppCompatActivity {
         SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Nav.PREFS_NAME, Context.MODE_PRIVATE);
         String Std_ID = sharedPreferences1.getString("stud_id", "");
 
-        // Initializing Database
-        databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
+        String t_days = sharedPreferences1.getString("t_days", null);
+        String left_days = sharedPreferences1.getString("left_days", null);
+        String p_days = sharedPreferences1.getString("p_days", null);
+        String a_days = sharedPreferences1.getString("a_days", null);
+        String m_maths = sharedPreferences1.getString("m_maths", null);
+        String m_english = sharedPreferences1.getString("m_english", null);
+        String m_hindi = sharedPreferences1.getString("m_hindi", null);
+        String m_sst = sharedPreferences1.getString("m_sst", null);
+        String m_science = sharedPreferences1.getString("m_science", null);
+
+        int T_Days = Integer.parseInt(t_days);
+        int P_Days = Integer.parseInt(p_days);
+        int A_Days = Integer.parseInt(a_days);
+        int L_Days = Integer.parseInt(left_days);
 
 
-        databaseReference.child("Student").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                final String t_days = snapshot.child(Std_ID).child("Total days").getValue(String.class);
-                final String left_days = snapshot.child(Std_ID).child("Days Left").getValue(String.class);
-                final String p_days = snapshot.child(Std_ID).child("Present").getValue(String.class);
-                final String a_days = snapshot.child(Std_ID).child("Absents").getValue(String.class);
-                final String m_maths = snapshot.child(Std_ID).child("Maths").getValue(String.class);
-                final String m_english = snapshot.child(Std_ID).child("English").getValue(String.class);
-                final String m_hindi = snapshot.child(Std_ID).child("Hindi").getValue(String.class);
-                final String m_sst = snapshot.child(Std_ID).child("Social Studies").getValue(String.class);
-                final String m_science = snapshot.child(Std_ID).child("Science").getValue(String.class);
 
-
-                int T_Days = Integer.parseInt(t_days);
-                int P_Days = Integer.parseInt(p_days);
-                int A_Days = Integer.parseInt(a_days);
-                int L_Days = Integer.parseInt(left_days);
-
-
-                // Setting marks
-                maths_m.setText(m_maths);
-                eng_m.setText(m_english);
-                hin_m.setText(m_hindi);
-                sst_m.setText(m_sst);
-                sci_m.setText(m_science);
+        // Setting marks
+        maths_m.setText(m_maths);
+        eng_m.setText(m_english);
+        hin_m.setText(m_hindi);
+        sst_m.setText(m_sst);
+        sci_m.setText(m_science);
 
 
 //                int T_Marks = Integer.parseInt(t_marks);
 
-                int holidays = 365 - T_Days;
-                float Holidays = (holidays / 365f);
-                float pie_t_days = (T_Days / 365f);
-                float pie_left_days = (L_Days / 365f);
-                float pie_p_days = (P_Days / 365f);
-                float pie_a_days = (A_Days / 365f);
+        int holidays = 365 - T_Days;
+        float Holidays = (holidays / 365f);
+        float pie_t_days = (T_Days / 365f);
+        float pie_left_days = (L_Days / 365f);
+        float pie_p_days = (P_Days / 365f);
+        float pie_a_days = (A_Days / 365f);
 
 
-                ArrayList<PieEntry> entries = new ArrayList<>();
-                entries.add(new PieEntry(pie_p_days, "Present"));
-                entries.add(new PieEntry(pie_a_days, "Absent"));
-                entries.add(new PieEntry(Holidays, "School Holidays"));
-                entries.add(new PieEntry(pie_left_days, "School Days left"));
+        ArrayList<PieEntry> entries = new ArrayList<>();
+        entries.add(new PieEntry(pie_p_days, "Present"));
+        entries.add(new PieEntry(pie_a_days, "Absent"));
+        entries.add(new PieEntry(Holidays, "School Holidays"));
+        entries.add(new PieEntry(pie_left_days, "School Days left"));
 
-                ArrayList<Integer> colors = new ArrayList<>();
-                for (int color : ColorTemplate.MATERIAL_COLORS) {
-                    colors.add(color);
-                }
-                for (int color : ColorTemplate.VORDIPLOM_COLORS) {
-                    colors.add(color);
-                }
-                PieDataSet dataSet = new PieDataSet(entries, "Attendence");
-                dataSet.setColors(colors);
+        ArrayList<Integer> colors = new ArrayList<>();
+        for (int color : ColorTemplate.MATERIAL_COLORS) {
+            colors.add(color);
+        }
+        for (int color : ColorTemplate.VORDIPLOM_COLORS) {
+            colors.add(color);
+        }
+        PieDataSet dataSet = new PieDataSet(entries, "Attendence");
+        dataSet.setColors(colors);
 
-                PieData data = new PieData(dataSet);
-                data.setDrawValues(true);
-                data.setValueFormatter(new PercentFormatter((pieChart1)));
-                data.setValueTextSize(12f);
-                data.setValueTextColor(android.R.color.white);
-
-
-                pieChart1.setData(data);
-                pieChart1.invalidate();
-
-                pieChart1.animateY(2500, Easing.EaseInOutQuad);
+        PieData data = new PieData(dataSet);
+        data.setDrawValues(true);
+        data.setValueFormatter(new PercentFormatter((pieChart1)));
+        data.setValueTextSize(12f);
+        data.setValueTextColor(android.R.color.white);
 
 
-            }
+        pieChart1.setData(data);
+        pieChart1.invalidate();
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+        pieChart1.animateY(2500, Easing.EaseInOutQuad);
 
 
     }

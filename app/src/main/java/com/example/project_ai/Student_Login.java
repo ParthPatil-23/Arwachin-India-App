@@ -150,7 +150,7 @@ public class Student_Login extends AppCompatActivity {
                                             editor.apply();
 
                                             // Intent to profile activity
-                                            Intent intent1 = (new Intent(Student_Login.this, Student_Nav.class));
+                                            Intent intent1 = (new Intent(Student_Login.this, loader.class));
                                             startActivity(intent1);
                                             finish();
                                             Toast.makeText(Student_Login.this, "Login Successfull", Toast.LENGTH_SHORT).show();

@@ -10,7 +10,9 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -63,16 +65,11 @@ public class Profile extends AppCompatActivity {
         tot_sch_fees_paid = findViewById(R.id.tot_sch_fees_paid);
         tot_sch_fees_left = findViewById(R.id.tot_sch_fees_left);
 
-
         // Initialzing Bottom Nav Bar
         BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNav);
 
         // setting home selected
         bottomNavigationView.setSelectedItemId(R.id.Profile);
-
-        // Initializing Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
 
         // Initializing Database
         databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://arwachin-india-3bb19-default-rtdb.firebaseio.com/");
@@ -87,50 +84,36 @@ public class Profile extends AppCompatActivity {
             SharedPreferences sharedPreferences1 = getSharedPreferences(Student_Login.PREFS_NAME, 0);
             String Std_ID = sharedPreferences1.getString("stud_id", "");
 
+            String Name = sharedPreferences1.getString("Name", null);
+            String DOB = sharedPreferences1.getString("DOB", null);
+            String ID_NUM = sharedPreferences1.getString("ID_NUM", null);
+            String F_Name = sharedPreferences1.getString("F_Name", null);
+            String M_Name = sharedPreferences1.getString("M_Name", null);
+            String Class1 = sharedPreferences1.getString("Class1", null);
+            String Class_Tech = sharedPreferences1.getString("Class_Tech", null);
+            String Mess_Fess = sharedPreferences1.getString("Mess_Fess", null);
+            String Bus_Fees = sharedPreferences1.getString("Bus_Fees", null);
+            String School_Fees = sharedPreferences1.getString("School_Fees", null);
+            String School_Fees_Left = sharedPreferences1.getString("School_Fees_Left", null);
+            String School_Fees_Paid = sharedPreferences1.getString("School_Fees_Paid", null);
 
-            databaseReference.child("Student").addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                    // Pulling Data
-                    final String Name = snapshot.child(Std_ID).child("Name").getValue(String.class);
-                    final String DOB = snapshot.child(Std_ID).child("DOB").getValue(String.class);
-                    final String ID_NUM = snapshot.child(Std_ID).child("I D Number").getValue(String.class);
-                    final String F_Name = snapshot.child(Std_ID).child("Father's Name").getValue(String.class);
-                    final String M_Name = snapshot.child(Std_ID).child("Mother's Name").getValue(String.class);
-                    final String Class1 = snapshot.child(Std_ID).child("Class").getValue(String.class);
-                    final String Class_Tech = snapshot.child(Std_ID).child("Class Teacher").getValue(String.class);
-                    final String Mess_Fess = snapshot.child(Std_ID).child("Mess fees").getValue(String.class);
-                    final String Bus_Fees = snapshot.child(Std_ID).child("Bus fees").getValue(String.class);
-                    final String School_Fees = snapshot.child(Std_ID).child("Total Fees").getValue(String.class);
-                    final String School_Fees_Left = snapshot.child(Std_ID).child("Remaining").getValue(String.class);
-                    final String School_Fees_Paid = snapshot.child(Std_ID).child("Paid").getValue(String.class);
-
-
-                    // Putting Data
-                    fullname_field.setText(Name + " kolder");
-                    username_field.setText(Std_ID);
-                    full_name.setText(Name);
-                    dob.setText(DOB);
-                    roll_no.setText(ID_NUM);
-                    father_name.setText(F_Name);
-                    mother_name.setText(M_Name);
-                    class1.setText(Class1);
-                    class_tech.setText(Class_Tech);
-                    mess_fees.setText(Mess_Fess);
-                    bus_fees.setText(Bus_Fees);
-                    tot_sch_fees.setText(School_Fees);
-                    tot_sch_fees_left.setText(School_Fees_Left);
-                    tot_sch_fees_paid.setText(School_Fees_Paid);
+            // Putting Data
+            fullname_field.setText(Name + " kolder");
+            username_field.setText(Std_ID);
+            full_name.setText(Name);
+            dob.setText(DOB);
+            roll_no.setText(ID_NUM);
+            father_name.setText(F_Name);
+            mother_name.setText(M_Name);
+            class1.setText(Class1);
+            class_tech.setText(Class_Tech);
+            mess_fees.setText(Mess_Fess);
+            bus_fees.setText(Bus_Fees);
+            tot_sch_fees.setText(School_Fees);
+            tot_sch_fees_left.setText(School_Fees_Left);
+            tot_sch_fees_paid.setText(School_Fees_Paid);
 
 
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
 
 
             // Performing Item Selected listerner

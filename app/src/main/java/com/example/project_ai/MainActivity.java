@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Importing Buttons for Student and Teacher Login
     Button student_btn, teacher_btn;
-    String t_days,p_days,a_days;
+    String t_days, p_days, a_days;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
