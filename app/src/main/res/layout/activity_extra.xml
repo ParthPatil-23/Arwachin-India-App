@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Extra"
-    android:background="@color/darkgrey">
+    android:background="@color/offwhite">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/arrow"
@@ -32,15 +32,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019"
-        app:srcCompat="@drawable/ic_baseline_keyboard_backspace_24_b" />
+        app:srcCompat="@drawable/ic_baseline_keyboard_backspace_24" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="84dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
@@ -50,9 +50,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/grey">
+            android:background="@color/blue">
 
             <TextView
                 android:id="@+id/activity1"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="10dp"
-                android:text="1st "
+                android:text="Updating... "
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -91,10 +91,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
@@ -104,9 +104,9 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/grey">
+            android:background="@color/blue">
 
             <TextView
                 android:id="@+id/activity2"
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="10dp"
-                android:text="1st "
+                android:text="Updating... "
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -145,10 +145,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
@@ -158,9 +158,9 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/grey">
+            android:background="@color/blue">
 
             <TextView
                 android:id="@+id/activity3"
@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="10dp"
-                android:text="1st "
+                android:text="Updating... "
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -198,10 +198,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView4"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
@@ -211,9 +211,9 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/grey">
+            android:background="@color/blue">
 
             <TextView
                 android:id="@+id/activity4"
@@ -221,10 +221,10 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="10dp"
-                android:text="1st "
+                android:text="Updating... "
+                android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.047"
@@ -235,9 +235,9 @@
             <ImageView
                 android:layout_width="140dp"
                 android:layout_height="105dp"
-                android:textColor="@color/white"
                 android:layout_marginStart="106dp"
                 android:layout_marginEnd="-60dp"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.629"
@@ -253,10 +253,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
@@ -266,16 +266,16 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="@color/grey">
+            android:background="@color/blue">
 
             <TextView
                 android:id="@+id/activity5"
-                android:layout_width="73dp"
-                android:layout_height="28dp"
+                android:layout_width="91dp"
+                android:layout_height="33dp"
                 android:fontFamily="sans-serif-smallcaps"
-                android:text="1st "
+                android:text="Updating... "
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 android:textStyle="bold"

@@ -43,7 +43,7 @@ public class Student_Nav extends AppCompatActivity {
     Button add, delete;
     TextView tv1, tv2, tv3, tv4, tv5, maths_m, eng_m, sci_m, hin_m, sst_m;
     PieChart pieChart1;
-    LottieAnimationView conf1, conf2, conf3, task;
+    LottieAnimationView task;
 
 
     // Database reference
@@ -56,9 +56,7 @@ public class Student_Nav extends AppCompatActivity {
 
         // Animation
         task = findViewById(R.id.task);
-        conf1 = findViewById(R.id.conf1);
-        conf2 = findViewById(R.id.conf2);
-        conf3 = findViewById(R.id.conf3);
+
 
 
         // Marks Variables
@@ -137,17 +135,12 @@ public class Student_Nav extends AppCompatActivity {
                     editor2.apply();
 
                     task.playAnimation();
-                    conf1.playAnimation();
-                    conf2.playAnimation();
-                    conf3.playAnimation();
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             task.setVisibility(View.GONE);
-                            conf1.setVisibility(View.GONE);
-                            conf2.setVisibility(View.GONE);
-                            conf3.setVisibility(View.GONE);
+
                         }
                     }, 2700);
 
@@ -169,6 +162,12 @@ public class Student_Nav extends AppCompatActivity {
                         case R.id.Arwachin:
                             startActivity(new Intent(getApplicationContext()
                                     , ArwachinIndia.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+
+                        case R.id.Chat:
+                            startActivity(new Intent(getApplicationContext()
+                                    , Chat.class));
                             overridePendingTransition(0, 0);
                             return true;
 

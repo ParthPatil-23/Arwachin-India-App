@@ -11,7 +11,7 @@
         android:id="@+id/BottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
+        android:background="#A5A5A5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -30,14 +30,14 @@
         tools:context=".MainActivity"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="-284dp"
-        android:background="@color/grey">
+        android:background="#C7C7C7">
 
 
         <RelativeLayout
             android:id="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="@color/darkgrey"
+            android:background="#F6F6F6"
             android:padding="20dp">
 
             <ImageView
@@ -57,7 +57,7 @@
                 android:fontFamily="@font/machinegunk"
                 android:includeFontPadding="false"
                 android:text=""
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="25sp" />
 
             <TextView
@@ -95,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp"
-                    android:background="@color/grey">
+                    android:background="@color/iconic_red">
 
 
                     <TextView
@@ -105,7 +105,7 @@
                         android:layout_centerInParent="true"
                         android:hint="Class Rank"
                         android:includeFontPadding="false"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textColorHint="@color/white"
                         android:textSize="20sp" />
 
@@ -130,7 +130,7 @@
                 android:layout_height="125dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                app:cardBackgroundColor="@color/grey"
+                app:cardBackgroundColor="@color/iconic_red"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="15dp">
 
@@ -205,7 +205,7 @@
                         android:id="@+id/full_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:drawableLeft="@drawable/studentprofile"
                         android:padding="10dp"
                         android:drawablePadding="7dp"
@@ -240,7 +240,7 @@
                         android:id="@+id/dob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:drawableLeft="@drawable/calender"
                         android:paddingLeft="7dp"
                         android:drawablePadding="10dp"
@@ -275,7 +275,7 @@
                         android:id="@+id/roll_no"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:textColor="@color/white"
                         android:drawableLeft="@drawable/hash"
                         android:padding="10dp"
@@ -308,7 +308,7 @@
                         android:id="@+id/class_tech"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:textColor="@color/white"
                         android:drawableLeft="@drawable/teacherprofile"
                         android:padding="10dp"
@@ -342,7 +342,7 @@
                         android:id="@+id/father_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:textColor="@color/white"
                         android:drawableLeft="@drawable/fatherf"
                         android:padding="10dp"
@@ -375,7 +375,7 @@
                         android:id="@+id/mother_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:textColor="@color/white"
                         android:drawableLeft="@drawable/mother"
                         android:padding="10dp"
@@ -409,14 +409,14 @@
                         android:id="@+id/class1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
-                        android:textColor="@color/white"
+                        android:background="@color/iconic_red"
                         android:drawableLeft="@drawable/classroom"
+                        android:drawablePadding="10dp"
+                        android:editable="false"
                         android:padding="10dp"
                         android:paddingBottom="10dp"
-                        android:textSize="25dp"
-                        android:drawablePadding="10dp"
-                        android:editable="false" />
+                        android:textColor="@color/white"
+                        android:textSize="25dp" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -443,14 +443,14 @@
                         android:id="@+id/mess_fees"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
-                        android:textColor="@color/white"
+                        android:background="@color/iconic_red"
                         android:drawableLeft="@drawable/food"
+                        android:drawablePadding="10dp"
+                        android:editable="false"
                         android:padding="10dp"
                         android:paddingBottom="10dp"
-                        android:textSize="25dp"
-                        android:drawablePadding="10dp"
-                        android:editable="false" />
+                        android:textColor="@color/white"
+                        android:textSize="25dp" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -473,11 +473,13 @@
                         android:textColor="@color/white"
                         android:textSize="13dp" />
 
+
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/bus_fees"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:textColor="@color/white"
                         android:drawableLeft="@drawable/bus"
                         android:padding="10dp"
@@ -485,6 +487,8 @@
                         android:textSize="25dp"
                         android:drawablePadding="10dp"
                         android:editable="false" />
+
+
 
                 </androidx.cardview.widget.CardView>
 
@@ -511,7 +515,7 @@
                         android:id="@+id/tot_sch_fees"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_currency_rupee_24"
                         android:padding="10dp"
@@ -545,7 +549,7 @@
                         android:id="@+id/tot_sch_fees_paid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/lightgrey"
+                        android:background="@color/iconic_red"
                         android:textColor="@color/white"
                         android:drawableLeft="@drawable/ic_baseline_currency_rupee_24"
                         android:padding="10dp"
@@ -578,7 +582,7 @@
                             android:id="@+id/tot_sch_fees_left"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/lightgrey"
+                            android:background="@color/iconic_red"
                             android:textColor="@color/white"
                             android:drawableLeft="@drawable/ic_baseline_currency_rupee_24"
                             android:padding="10dp"
@@ -603,7 +607,7 @@
                             android:id="@+id/spacefiller"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/grey"
+                            android:background="#C7C7C7"
                             android:paddingTop="10dp"
                             android:paddingBottom="10dp"
                             android:textSize="25dp"

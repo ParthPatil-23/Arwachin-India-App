@@ -4,16 +4,22 @@
     <item
         android:id="@+id/Home"
         android:icon="@drawable/home"
-        android:title="Home" />
+        android:title="Home"/>
 
 <!--    <item-->
 <!--        android:id="@+id/Planner"-->
 <!--        android:icon="@drawable/ic_baseline_calendar_today_24"-->
 <!--        android:title="Planner" />-->
 
+
+    <item
+        android:id="@+id/Chat"
+        android:icon="@drawable/chat"
+        android:title="Chat" />
+
     <item
         android:id="@+id/Arwachin"
-        android:icon="@drawable/arwachin"
+        android:icon="@drawable/arwachin1"
         android:title="ArwachinIndia" />
 
     <item

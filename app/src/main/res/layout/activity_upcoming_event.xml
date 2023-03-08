@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Upcoming_event"
-    android:background="@color/darkgrey">
+    android:background="@color/offwhite">
 
 
     <ImageView
@@ -18,15 +18,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019"
-        app:srcCompat="@drawable/ic_baseline_keyboard_backspace_24_b" />
+        app:srcCompat="@drawable/ic_baseline_keyboard_backspace_24" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="370dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="350dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
         app:flow_horizontalAlign="center"
@@ -36,9 +36,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/grey">
+            android:background="@color/blue">
 
 
             <TextView
@@ -116,12 +116,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView6"
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="270dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="240dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,9 +131,9 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@color/grey">
+            android:background="@color/blue">
 
             <TextView
                 android:id="@+id/textView19"
@@ -205,17 +205,18 @@
         android:layout_width="222dp"
         android:layout_height="39dp"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-black"
         android:text="2 events found"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/cardView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintHorizontal_bias="0.111"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintTop_toBottomOf="@+id/back3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -83,9 +83,6 @@ public class ArwachinIndia extends AppCompatActivity {
 
                 Intent intent = new Intent(ArwachinIndia.this, Extra.class);
                 startActivity(intent);
-
-
-
             }
         });
 
@@ -118,6 +115,12 @@ public class ArwachinIndia extends AppCompatActivity {
                         case R.id.DashBoard:
                             startActivity(new Intent(getApplicationContext()
                                     , DashBoard.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+
+                        case R.id.Chat:
+                            startActivity(new Intent(getApplicationContext()
+                                    , Chat.class));
                             overridePendingTransition(0, 0);
                             return true;
 

@@ -7,13 +7,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ArwachinIndia"
-    android:background="@color/darkgrey">
+    android:background="@color/offwhite">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
+        android:background="#A5A5A5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,7 +27,7 @@
 
         app:layout_constraintBottom_toTopOf="@+id/BottomNav"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
@@ -41,9 +41,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/desk"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="83dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="32dp"
                 android:paddingLeft="15dp"
                 android:paddingTop="15dp"
@@ -57,16 +59,16 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="83dp"
-                    android:background="@color/grey">
+                    android:background="@color/iconic_red">
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-smallcaps"
-                        android:text="Princpal's Desk"
+                        android:text="Principal's Desk"
                         android:textColor="@color/white"
                         android:textSize="25dp"
                         android:textStyle="bold"
@@ -85,8 +87,10 @@
                         android:layout_marginBottom="10dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.651"
                         app:layout_constraintStart_toEndOf="@+id/textView8"
                         app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
                         app:srcCompat="@drawable/desk" />
 
                     <ImageView
@@ -104,17 +108,20 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/class_progress"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="300dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="32dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="15dp"
-                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
                 android:paddingTop="15dp"
                 android:paddingRight="15dp"
-                android:paddingLeft="15dp"
+                android:paddingBottom="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/extra"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.508"
@@ -122,9 +129,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/desk">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="350dp"
-                    android:layout_height="300dp"
-                    android:background="@color/grey">
+                    android:layout_width="match_parent"
+                    android:layout_height="298dp"
+                    android:background="@color/iconic_red">
 
                     <TextView
                         android:id="@+id/textView10"
@@ -294,15 +301,17 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/extra"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="32dp"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="15dp"
-                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
                 android:paddingTop="15dp"
                 android:paddingRight="15dp"
-                android:paddingLeft="15dp"
+                android:paddingBottom="15dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="15dp"
                 app:layout_constraintBottom_toTopOf="@+id/cardView12"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.508"
@@ -310,9 +319,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/class_progress">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:background="@color/grey">
+                    android:background="@color/iconic_red">
 
                     <ImageView
                         android:id="@+id/image"
@@ -331,6 +340,7 @@
                         android:id="@+id/textView21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="sans-serif-smallcaps"
                         android:text="My Extracurricular"
@@ -339,8 +349,7 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toEndOf="@+id/extracurricular"
+                        app:layout_constraintStart_toEndOf="@+id/image"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.228" />
 
@@ -361,8 +370,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView12"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginBottom="32dp"
                 android:paddingLeft="15dp"
                 android:paddingTop="15dp"
@@ -376,9 +387,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/extra">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="350dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:background="@color/grey">
+                    android:background="@color/iconic_red">
 
                     <ImageView
                         android:id="@+id/imageView6"
@@ -426,13 +437,10 @@
             </androidx.cardview.widget.CardView>
 
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </ScrollView>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

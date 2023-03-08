@@ -66,6 +66,12 @@ public class DashBoard extends AppCompatActivity {
                             overridePendingTransition(0, 0);
                             return true;
 
+                        case R.id.Chat:
+                            startActivity(new Intent(getApplicationContext()
+                                    , Chat.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+
                         case R.id.Planner:
                             startActivity(new Intent(getApplicationContext()
                                     , Planner.class));

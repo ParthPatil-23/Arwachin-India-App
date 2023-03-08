@@ -134,6 +134,12 @@ public class Profile extends AppCompatActivity {
                             overridePendingTransition(0, 0);
                             return true;
 
+                        case R.id.Chat:
+                            startActivity(new Intent(getApplicationContext()
+                                    , Chat.class));
+                            overridePendingTransition(0, 0);
+                            return true;
+
                         case R.id.DashBoard:
                             startActivity(new Intent(getApplicationContext()
                                     , DashBoard.class));

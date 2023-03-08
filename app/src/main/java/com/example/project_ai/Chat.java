@@ -12,24 +12,23 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Planner extends AppCompatActivity {
+public class Chat extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_planner);
-
+        setContentView(R.layout.activity_chat);
 
         // Checking if the device is connected to internet
-        if (!isConnected(Planner.this)) {
-            Intent intent3 = new Intent(Planner.this, No_Internet.class);
+        if (!isConnected(Chat.this)) {
+            Intent intent3 = new Intent(Chat.this, No_Internet.class);
             startActivity(intent3);
         } else {
             // Initialzing Bottom Nav Bar
             BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNav);
 
             // setting home selected
-            bottomNavigationView.setSelectedItemId(R.id.Planner);
+            bottomNavigationView.setSelectedItemId(R.id.Chat);
 
             // Performing Item Selected listerner
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,8 +68,10 @@ public class Planner extends AppCompatActivity {
                     return false;
                 }
             });
+
             bottomNavigationView.setItemIconTintList(null);
         }
+
     }
 
 
@@ -86,11 +87,10 @@ public class Planner extends AppCompatActivity {
         }
     }
 
-
     // Function to check if device is connected to internet
-    private boolean isConnected(Planner planner) {
+    private boolean isConnected(Chat chat) {
 
-        ConnectivityManager connectivityManager = (ConnectivityManager) planner.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) chat.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         NetworkInfo wificonn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileconn = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
